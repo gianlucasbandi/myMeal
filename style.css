@@ -50,3 +50,14 @@
   .bg-light {
     background-color: rgba(233, 242, 231, 0.8) !important;
   }
+  .carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 5rem;
+    padding-left: 0;
+    color: rgb(255, 255, 255);
+    text-align: left;
+  }
