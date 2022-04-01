@@ -1,5 +1,5 @@
 .carousel-item {
-    height: 35rem;
+    height: 40rem;
     background: #777;
     color:white;
     position: relative;
@@ -48,6 +48,5 @@
     background-color: transparent;
   }
   .bg-light {
-    --bs-bg-opacity: 0.8;
-    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    background-color: rgba(233, 242, 231, 0.8) !important;
   }
