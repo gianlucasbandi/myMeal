@@ -59,6 +59,7 @@
   padding-bottom: 5rem;
   padding-left: 0;
   color: rgb(255, 255, 255);
+  text-shadow: 1px 1px #1c2149;
   text-align: left;
 }
 .navbar-nav {
@@ -96,4 +97,48 @@
   color: #fff;
   background-color: #198754;
   border-color: #198754;
+}
+.mybutton {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 25px;
+  color: #1c2149;
+  z-index: 1;
+  background: rgba(232, 232, 232, 0.7);
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+ }
+ 
+.mybutton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #1c2149;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+}
+ 
+.mybutton:hover {
+  color: #e8e8e8;
+}
+ 
+.mybutton:hover::before {
+  width: 100%;
+}
+ .form-control[type=search] {
+  background-image: url(/img/loupe.png);
+  background-size:10%;
+  background-repeat: no-repeat;
+  background-position:95%;
 }

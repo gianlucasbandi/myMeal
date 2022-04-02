@@ -48,13 +48,12 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
-          <button class="btn btn-success" type="submit">Cerca</button>
+          <input class="form-control me-2" placeholder="Cerca" oninput="hideIcon()" id="search" type="search" aria-label="Search">
         </form>
       </div>
     </div>
   </nav>
-    <div id="carouselHomePage" class="carousel slide carousel-fade" pause="false" data-bs-ride="carousel">
+    <div id="carouselHomePage" class="carousel slide carousel-fade" pause="false" >
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -67,9 +66,11 @@
           <div class="overlay-image" style="background-image: url(img/meal2.jpg);"></div>
           <div class="container-my">
             <div class="carousel-caption d-md-block">
-              <h5>Crea il tuo pasto, per un'alimentazione sana!</h5>
+              <h3>Crea i tuoi pasti, per un'alimentazione sana!</h3>
               <br>
-              <a href="./creapasto.html" class="btn btn-success">Crea il tuo pasto</a>
+              <button class="mybutton" onclick="window.location.href='/creapasto.html'">
+                Crea Pasti
+              </button>
             </div>
           </div>
         </div>
@@ -79,7 +80,9 @@
             <div class="carousel-caption d-md-block">
               <h5>Scopri tutte le ricette gustose e salutari che incontrano il tuo gusto!</h5>
               <br>
-              <a href="./ricette.html" class="btn btn-success">Vai alle ricette</a>
+              <button class="mybutton" onclick="window.location.href='/ricette.html'">
+                Ricette
+              </button>
             </div>
           </div>
         </div>
@@ -89,7 +92,9 @@
             <div class="carousel-caption d-md-block">
               <h5>Tieniti informato su tutte le novità e gli aggiornamenti!</h5>
               <br>
-              <a href="./articoli.html" class="btn btn-success">Vedi gli articoli</a>
+              <button class="mybutton" onclick="window.location.href='/articoli.html'">
+                Articoli
+              </button>
             </div>
           </div>
         </div>
@@ -99,7 +104,9 @@
             <div class="carousel-caption d-md-block">
               <h5>Segui i consigli di esperti del settore!</h5>
               <br>
-              <a href="./coach.html" class="btn btn-success">Consulta gli esperti</a>
+              <button class="mybutton" onclick="window.location.href='/coach.html'">
+                Consigli Esperti
+              </button>
             </div>
           </div>
         </div>
@@ -109,7 +116,9 @@
             <div class="carousel-caption d-md-block">
               <h5>Tante persone hanno raggiunto i loro obiettivi, scopri le loro storie!</h5>
               <br>
-              <a href="./esperienze.html" class="btn btn-success">Scopri di più</a>
+              <button class="mybutton" onclick="window.location.href='/esperienze.html'">
+                Scopri di più
+              </button>
             </div>
           </div>
         </div>
@@ -140,5 +149,6 @@
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="./functions.js"></script>
 </body>
 </html>

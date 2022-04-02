@@ -1,0 +1,10 @@
+blu:
+	#1c2149
+blu chiaro:
+	#d4d5dd
+		oppure
+	#555876
+verde:
+	#00936f
+verde chiaro:
+	#79c9bc
