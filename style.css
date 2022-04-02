@@ -141,7 +141,7 @@ body {
 }
  .form-control[type=search] {
   background-image: url(/img/loupe.png);
-  background-size: 7%;
+  background-size: 1rem;
   background-repeat: no-repeat;
   background-position:95%;
 }
