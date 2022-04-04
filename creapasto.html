@@ -9,7 +9,7 @@
   <title>myMeal</title>
 </head>
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
         <svg xmlns="http://www.w3.org/2000/svg" 
@@ -53,7 +53,147 @@
       </div>
     </div>
   </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="./functions.js"></script>
+<table>
+  <tr class="row" style="height:36px; margin-top:5rem;">
+		<td class="borderLeft borderRight borderBottom" style="width:100%;padding:0px">
+			<div id="addOther" class="food_main_link open" style="padding-left:16px" onclick="showAddPanel('addOther', 'searchOther', 4); return false;">
+				<img src="https://a.ftscrt.com/static/images/foodadd/FA_add.png" width="17px" height="17px"/>
+				<span>Aggiungi Voce</span>
+			</div>
+			<div id="searchOther" style="display:none;background-color:#F7F7F7">
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tr style="height:35px">
+						<td colspan="2" class="food_add_menu">
+							<a class="food_main_link close" href="#" onclick="closeAddPanel(); return false;">
+								<span>Aggiungi Voce</span>
+							</a>
+							<div style="float:right;padding-right:12px">
+								<a href="#" onclick="closeAddPanel(); return false;" style="line-height:38px" class="smallText"><b>Annulla</b> <img src="https://a.ftscrt.com/static/images/foodadd/FA_cancel_2.png" width="20px" height="20px" style="vertical-align:middle"/></a>
+							</div>
+						</td>
+					</tr>
+					<tr style="height:38px">
+						<td class="food_add_menu"></td>
+						<td align="right" class="food_add_content" valign="top">
+							<table cellpadding="0" cellspacing="0" width="100%">
+								<tr>
+									<td>
+										<div id="fasicn_4" class="fasicn" onmouseover="onSearchInputMouseOver(this)" onmouseout="onSearchInputMouseOut(this)">
+											<input id="searchOtherExp" type="text" class="fasift" onfocus="onSearchInputFocus()" onkeyup="onSearchInputKeyUp(event)" onkeydown="onSearchInputKeyDown(event)" onclick="showSearch()" maxlength="50"/>
+											<input id="searchOtherExpAugment" type="text" class="fasisn"/>
+										</div>
+									</td>
+									<td width="10px">&nbsp;</td>
+									<td align="right" width="60px">
+										<a id="searchOtherButton" class="button disabled" href="#" onclick="onSearchClick(); return false;">
+											<span class="left">&nbsp;</span>
+											<span class="middle" style="width:52px">&nbsp;<img src="https://a.ftscrt.com/static/images/foodadd/But_icon_Search_2.png" width="20px" height="20px"/>&nbsp;</span>
+											<span class="right">&nbsp;</span>
+										</a> 
+									</td>
+								</tr>
+							</table>
+							<img id="food_add_autosuggest_arrow_4" src="https://a.ftscrt.com/static/images/foodadd/FA_SearchBox_Arrow_blue_2.png" width="17" height="10" style="position:absolute;padding-left:20px;padding-top:1px" />
+						</td>
+					</tr>
+					<tr>
+						<td class="food_add_menu" valign="top">
+							<div style="height:20px"></div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showRecentlyEaten(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_recent_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Mangiato di Recente <span id="menu_item_count_4_1"></span></a>
+							</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showMostEaten(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_most_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Pi&#249; Mangiati <span id="menu_item_count_4_2"></span></a>
+							</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showSavedMeals(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_saved_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Pasti Salvati <span id="menu_item_count_4_3"></span></a>
+							</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showCookbook(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_recipes_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Ricettario <span id="menu_item_count_4_4"></span></a>
+							</div>
+							<div name="menu_item_4" id="menu_item_search_item_4" onclick="selectMenuItem(this); showSearchItems(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_search_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Alimenti Ricerca <span id="menu_item_count_4_5"></span></a>
+							</div>
+							<div class="food_add_menu_header">Scelta Rapida</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showFoods(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_foods_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Alimenti <span id="menu_item_count_4_6"></span></a>
+							</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showRestaurants(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_restaurant_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Ristoranti &amp; Catene <span id="menu_item_count_4_7"></span></a>
+							</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showBrands(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_brands_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Marche pi&#249; conosciute <span id="menu_item_count_4_8"></span></a>
+							</div>
+							<div name="menu_item_4" onclick="selectMenuItem(this); showSupermarkets(); return false;" style="background-image: url(https://a.ftscrt.com/static/images/foodadd/FA_superM_default.png)">
+								<span class="destination">&nbsp;</span><a href="#">Marche dei Supermercati <span id="menu_item_count_4_9"></span></a>
+							</div>
+						</td>
+						<td class="food_add_content" valign="top">
+							<table id="food_add_autosuggest_4" cellspacing="0" cellpadding="0" style="width:100%;background-color:#fff;margin-bottom:2px">
+								<tr>
+									<td class="faacrs">
+										<table cellpadding="0" cellspacing="0" style="width:100%">
+											<tr class onmouseover="onAutoSuggestMouseOver(0)" onmouseout="onAutoSuggestMouseOut()">
+												<td class="faacrw" id="faacrw_4_0" onclick="onAutoSuggestClick(this)"><div></div></td>
+											</tr>
+											<tr class onmouseover="onAutoSuggestMouseOver(1)" onmouseout="onAutoSuggestMouseOut()">
+												<td class="faacrw" id="faacrw_4_1" onclick="onAutoSuggestClick(this)"><div></div></td>
+											</tr>
+											<tr class onmouseover="onAutoSuggestMouseOver(2)" onmouseout="onAutoSuggestMouseOut()">
+												<td class="faacrw" id="faacrw_4_2" onclick="onAutoSuggestClick(this)"><div></div></td>
+											</tr>
+											<tr class onmouseover="onAutoSuggestMouseOver(3)" onmouseout="onAutoSuggestMouseOut()">
+												<td class="faacrw" id="faacrw_4_3" onclick="onAutoSuggestClick(this)"><div></div></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<div id="food_add_results_4" style="border:1px solid #FF7400;height:450px;background-color:#FFFFFF;overflow-y:scroll;overflow-x:hidden;position:relative">
+								<div id="searchOtherResults" style="display:none;height:100%;position:relative"></div>
+							</div>
+						</td>
+					</tr>
+					<tr style="height:48px">
+						<td class="food_add_menu"></td>
+						<td class="food_add_content" valign="middle">
+							<div style="float:left">
+								<a id="food_add_action_link_4" href="#" onclick="return doActionLinkClick();" class="smallText" style="line-height:20px">
+									<img src="https://a.ftscrt.com/static/images/foodadd/add_small.png" width="20px" height="20px" style="vertical-align:top"/>Aggiungi Nuovo Alimento
+								</a>
+								
+									<span id="copy_yesterday_action_link_4" class="smallText" style="color:#028CC4">
+										<img src="https://a.ftscrt.com/static/images/foodadd/add_small.png" width="20px" height="20px" style="vertical-align:top"/>Copia:
+										<a onclick="return doWarning()" href="/Diary.aspx?pa=fj&action=copy&ago=1&dt=19084&meal=4" style="line-height:20px">
+											Ieri
+										</a> |
+										<a onclick="return doWarning()" href="/Diary.aspx?pa=fj&action=copy&ago=7&dt=19084&meal=4" style="line-height:20px">
+											La settimana scorsa
+										</a>
+									</span>
+								
+							</div>
+							<div style="float:right">
+								<a id="add_selected_button_4" class="button disabled" href="#" onclick="onSaveSelectedClick(); return false;">
+									<span class="left">&nbsp;</span>
+									<span class="middle" style="padding:0px 10px">
+										<img src="https://a.ftscrt.com/static/images/foodadd/But_icon_Save.png" width="20px" height="20px"/> Aggiungi
+										<span style="display:inline;width:15px" id="add_selected_count_4"></span>
+									</span>
+									<span class="right">&nbsp;</span>
+								</a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+</table>
+<input name="addMember" type="button" id="member_table" name="AddMember" value='Add Member' style="margin-top: 5rem;" onclick="addMember()"/>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="./functions.js"></script>
 </body>
 </html>
