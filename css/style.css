@@ -92,7 +92,7 @@ body {
   width: 100%;
 }
  .form-control[type=search] {
-  background-image: url(./img/loupe.png);
+  background-image: url(../img/loupe.png);
   background-size: 1rem;
   background-repeat: no-repeat;
   background-position:95%;
@@ -101,9 +101,9 @@ body {
 .form-control:hover {
   color: #212529;
   background-color: #fff;
-  border-color: rgba(121, 201, 188, 0.25);
+  border-color: rgba(0, 0, 0, 0.25);
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(95, 167, 7, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(202, 237, 160, 0.25);
 }
 .form-control:focus {
   color: #212529;
@@ -111,6 +111,10 @@ body {
   outline: 0;
   background-image: none;
   box-shadow: 0 0 0 0.25rem rgba(95, 167, 7, 0.25);
+}
+.form-control:hover:active {
+  outline: 0;
+  border-color: rgba(255, 0, 0, 0.25);
 }
 .navbar-brand {
   padding-top: 0.3125rem;
