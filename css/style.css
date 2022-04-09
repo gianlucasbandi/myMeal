@@ -205,3 +205,10 @@ body {
 .swiper-slide {
   background-color: antiquewhite;
 }
+.swiper-wrapper {
+  padding-left: 1rem;
+  padding-right: 20rem;
+}
+:root {
+  --swiper-navigation-color: #E49A38;
+}
