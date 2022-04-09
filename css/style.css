@@ -1,5 +1,6 @@
 body {
   background-color: rgba(121, 201, 188, 0.1);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .carousel-item {
   height: 40rem;
@@ -157,4 +158,47 @@ body {
 .navbar-light .navbar-text a:hover,
 .navbar-light .navbar-text a:focus {
   color: rgba(0, 0, 0, 0.9);
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mybox {
+  background-color: #9094b3;
+  color: white;
+  width: 25%;
+  border-radius:20px;
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.flexbox {
+  display: flex;
 }
