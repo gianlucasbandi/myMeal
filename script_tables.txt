@@ -1,0 +1,44 @@
+create table alimento (
+	nome varchar(30) primary key,
+	peso integer,
+	carboidrati float,
+	proteine float,
+	grassi float,
+	calorie float
+);
+
+create table utente (
+	codice varchar(30) primary key
+);
+
+create table menu (
+	utente varchar(30),
+	giorno integer,
+	mese integer,
+	anno integer,
+	primary key(utente, giorno, mese, anno),
+	unique(giorno, mese, anno),
+	foreign key(utente) references utente(codice)
+);
+
+create table pasto (
+	tipo varchar(30),
+	menu_utente varchar(30),
+	menu_giorno integer,
+	menu_mese integer,
+	menu_anno integer,
+	primary key(tipo, menu_utente, menu_giorno, menu_mese, menu_anno),
+	foreign key(menu_utente, menu_giorno, menu_mese, menu_anno) references menu(utente, giorno, mese, anno)
+	
+);
+
+create table formato (
+	alimento_nome varchar(30),
+	pasto_tipo varchar(30),
+	pasto_menu_utente varchar(30),
+	pasto_menu_giorno integer,
+	pasto_menu_mese integer,
+	pasto_menu_anno integer,
+	primary key(alimento_nome, pasto_tipo, pasto_menu_utente, pasto_menu_giorno, pasto_menu_mese, pasto_menu_anno),
+	foreign key(pasto_tipo, pasto_menu_utente, pasto_menu_giorno, pasto_menu_mese, pasto_menu_anno) references pasto(tipo, menu_utente, menu_giorno, menu_mese, menu_anno)
+);
