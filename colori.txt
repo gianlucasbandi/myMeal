@@ -8,3 +8,8 @@ verde:
 	#00936f
 verde chiaro:
 	#79c9bc
+
+
+#55CAA3
+#CAFBE7
+#5EA9FF

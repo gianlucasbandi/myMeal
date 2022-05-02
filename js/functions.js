@@ -1,6 +1,5 @@
 function hideIcon() {
     var s = document.getElementById("search");
-  
     s.style.backgroundImage='none';
 }
 
@@ -8,7 +7,7 @@ function result() {
     window.open("risultati.html")
 }
 
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 10,
     slidesPerGroup: 1,
