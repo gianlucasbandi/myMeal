@@ -8,7 +8,10 @@ create table alimento (
 );
 
 create table utente (
-	codice varchar(30) primary key
+	nome varchar(50),
+	cognome varchar(50),
+	email varchar(50) primary key,
+	passwd varchar(50) not null
 );
 
 create table menu (
@@ -18,7 +21,7 @@ create table menu (
 	anno integer,
 	primary key(utente, giorno, mese, anno),
 	unique(giorno, mese, anno),
-	foreign key(utente) references utente(codice)
+	foreign key(utente) references utente(email)
 );
 
 create table pasto (
