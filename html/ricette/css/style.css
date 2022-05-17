@@ -553,8 +553,14 @@ a:hover {
 .ing-list{
   list-style: square inside url("../img/square.jpg");
   text-align: left;
-  margin-top: 20px;
+ 
   /*margin-bottom: 10rem;*/
+  background-color: linen; 
+  padding:20%; 
+  margin-top: 2em; 
+  margin-bottom: 2em; 
+  margin-right: 1em; 
+  margin-left: 1em; 
 }
 
 .item {
