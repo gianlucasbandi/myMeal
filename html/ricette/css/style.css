@@ -354,6 +354,7 @@ a:hover {
   text-decoration: none;
   background-color: transparent;
   border: 0;
+  font-size: 19px;
 }
 
 .btn-no-op:hover{
