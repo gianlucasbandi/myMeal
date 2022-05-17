@@ -375,7 +375,7 @@ a:hover {
   margin-top: 5em;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   .flex-container {
     flex-direction: column;
   }
