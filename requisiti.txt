@@ -1,7 +1,7 @@
 RACCOLTA DEI REQUISITI
 
 Nella nostra applicazione, l'utente vuole creare il proprio menù.
-Degli utenti interessa il codice, identificativo.
+Degli utenti interessa l'email, identificativo.
 Dei menù interessa la data di creazione (con giorno mese e anno). Vige il vincolo per cui un 
 utente può creare un solo menù al giorno. Ogni menù è composto da uno o più pasti.
 Dei pasti interessa il tipo (stringa) identificativo. Un menù non può avere più pasti dello 

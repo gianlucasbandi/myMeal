@@ -8,14 +8,12 @@
 <body>
 <?php
     if (!isset($_POST["registrationButton"])) {
-        header("Location: ..");
+        header("Location: ../index.html");
     }
     else {
-        $dbconn = pg_connect("host=localhost port=5432 
-            dbname=mymeal user=postgres password=password")
-            or die(pg_last_error());
+        include('../php/config.php');
         $email = $_POST["inputEmail"];
-        $query = 'SELECT * FROM utente WHERE email=$1';
+        $query = "SELECT * FROM utente WHERE email=$1";
         $result = pg_query_params($dbconn, $query, array($email));
         if ($tuple=pg_fetch_array($result,null,PGSQL_ASSOC)) {
             echo "email già presente";
@@ -29,8 +27,7 @@
             $result = pg_query_params($dbconn,$query2,
                 array($nome,$cognome,$email,$passwd));
             if ($result) {
-                echo "Registrazione completata." . 
-                    "Inizia <a href=\"../index.html\"> qui </a>"; 
+                header("Location: ../login/login.html");
             }
             else {
                 echo "Errore";

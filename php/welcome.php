@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <title>Document</title>
+    <title>Area Personale</title>
 </head>
 <body>
     <?php
-       echo "ciao " . $_GET["name"];
-    ?> 
+        session_start();
+        if(isset($_SESSION['user_email'])) {
+            echo "ciao " . $_SESSION['name'];
+        }
+        else {
+            echo $_SESSION['user_email'];
+            echo 'Errore';
+        }
+    ?>
+    <button><a href="./logout.php">logout</a></button>
 </body>
 </html>
