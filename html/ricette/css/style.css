@@ -416,7 +416,7 @@ a:hover {
 
 .search-btn {
   background-color: white;
-  border: 2px solid #152a46;
+  border: 2px solid #1c21493b;
   max-height: 55px;
   border-radius: 2%;
 }
@@ -457,7 +457,7 @@ a:hover {
 }
 
 #myUL li a:hover:not(.header) {
-  background-color: rgb(68, 83, 131);
+  background-color: #1c21493b;
 }
 
 .card-container {
@@ -472,7 +472,7 @@ a:hover {
 }
 
 .card {
-  flex: 1 1 500px;
+  flex: 1 1 450px;
   margin-bottom: 3em;
 }
 
@@ -553,7 +553,6 @@ a:hover {
 .ing-list{
   list-style: square inside url("../img/square.jpg");
   text-align: left;
- 
   /*margin-bottom: 10rem;*/
   background-color: linen; 
   padding:20%; 
@@ -561,6 +560,7 @@ a:hover {
   margin-bottom: 2em; 
   margin-right: 1em; 
   margin-left: 1em; 
+  
 }
 
 .item {
