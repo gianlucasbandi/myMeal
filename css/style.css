@@ -258,3 +258,153 @@ a:hover {
 :root {
   --swiper-navigation-color: #E49A38;
 }
+
+
+/*nuovo*/
+.card-text {
+  text-align: left;
+}
+
+.card {
+  min-height: 350px;
+  max-height: 350px;
+}
+
+/*
+parte crea pasto
+*/
+
+.meal {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: rgba(125, 180, 143, 0.644);
+  align-content: center;
+  align-items: center;
+  margin-top: 2em;
+  gap: 3em;
+}
+
+
+@media (max-width: 800px) {
+  .meal { grid-template-columns: repeat(1, 1fr); }
+}
+
+.box {
+  color: white;
+  font-size: 17px;
+  width: 90%;
+  max-width: 400px;
+  min-width: 200px;
+  margin-left: 1em;
+}
+
+.verified-list {
+  list-style: none;
+}
+
+.new-btn {
+  text-decoration: none;
+  color: grey;
+  width: 100px;
+  height: 55px;
+  font-size: 18px;
+}
+
+.new-btn:hover {
+  color: black !important;
+}
+
+
+.cont-img {
+  margin-left: 3em;
+  margin-right: 4em;
+  width: 80%;
+  height: 80%;
+}
+
+.cont-img:hover {
+  transform: scale(1.05);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+
+
+/*
+parte sui libri
+*/
+
+.title {
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+.flex-books {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.book-category {
+  flex: 1 1 450px;
+  position: relative;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.img-category {
+  width: 100%;
+  /*min-width: 300px;
+  */
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 300px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  opacity: 0.9;
+}
+
+.img-category:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.centered {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1c2149;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+
+
+.centered:hover {
+  cursor: pointer;
+}
+
+
+.content {
+  background-color: #1c21493b;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.h4 {
+  margin-top: 2em;
+  color: white;
+}
+
