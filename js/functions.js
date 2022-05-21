@@ -26,16 +26,21 @@ let swiper = new Swiper(".mySwiper", {
           spaceBetween: 20,
           slidesPerGroup: 2,
         },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-          slidesPerGroup: 1,
+        972: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          slidesPerGroup: 2,
         },
-        1024: {
-          slidesPerView: 5,
+        1336: {
+          slidesPerView: 4,
           spaceBetween: 50,
           slidesPerGroup: 1,
         },
+        1650: {
+          slidesPerView: 5,
+          spaceBetween: 40,
+          slidesPerGroup: 1,
+        }
       },
   });
 
