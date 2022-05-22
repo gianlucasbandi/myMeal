@@ -235,21 +235,24 @@ a:hover {
   object-fit: cover;
 }
 .mybox {
-  background-color: #9094b3;
+  background-color: rgb(44, 49, 75);
   color: white;
   width: 25%;
   border-radius:20px;
   text-align: center;
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   margin-right: 1rem;
   margin-left: 1rem;
+  min-width: 300px;
+  max-height: 300px;
 }
 .flexbox {
   display: flex;
+  justify-content: center;
 }
 .swiper-slide {
-  background-color: antiquewhite;
+  background-color: transparent;
 }
 .swiper-wrapper {
   padding-left: 1rem;
@@ -259,8 +262,6 @@ a:hover {
   --swiper-navigation-color: #E49A38;
 }
 
-
-/*nuovo*/
 .card-text {
   text-align: left;
 }
@@ -276,12 +277,14 @@ parte crea pasto
 
 .meal {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   background-color: rgba(125, 180, 143, 0.644);
   align-content: center;
   align-items: center;
   margin-top: 2em;
   gap: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 
@@ -290,17 +293,38 @@ parte crea pasto
 }
 
 .box {
+  display: flex;
+  justify-content: center;
   color: white;
   font-size: 17px;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
-  min-width: 200px;
-  margin-left: 1em;
+  min-width: 250px;
 }
 
 .verified-list {
   list-style: none;
 }
+
+.cont-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 4em;
+  min-width: 300px;
+  max-width: 1000px;
+}
+
+.meal-img {
+  width: 100%;
+  height: 80%;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* parte ricette */
+
 
 .new-btn {
   text-decoration: none;
@@ -314,24 +338,111 @@ parte crea pasto
   color: black !important;
 }
 
+/* parte articoli */
 
-.cont-img {
-  margin-left: 3em;
-  margin-right: 4em;
-  width: 80%;
-  height: 80%;
+
+.homepage-articoli{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
 }
 
-.cont-img:hover {
-  transform: scale(1.05);
+.homepage-articoli h1{
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.img {
+
+.cards-art{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+  gap:50px;
+  padding: 20px;
+}
+
+.card-art-item{
+  display: flex;
+  padding: 3px;
+}
+
+.card-art{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.card-art img{
   width: 100%;
   height: 100%;
-  opacity: 0.8;
+  position:relative;
 }
 
+.card-art-content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  top:60%;
+  transform: translate(0,-50%);
+  transition: 1s;
+}
+
+.card-art-titolo{
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
+
+.card-art-titolo h2{
+  font-size: 20px;
+  text-shadow: 0px 0px 8px #000000;
+  font-weight: bold;
+}
+
+@media (max-width:250px){
+  .card-art-titolo h2{
+    font-size: 13px;
+  }
+}
+
+.card-art-button{
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 230ms;
+}
+
+.card-art-button a{
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  width: 20%;
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.card-art:hover .card-art-button{
+  opacity:1;
+}
+
+.card-art:hover .card-art-content{
+  top:50%;
+}
+
+.card-art-button:hover a{
+  color: #000000 !important;
+}
 
 
 /*
@@ -356,15 +467,15 @@ parte sui libri
 .book-category {
   flex: 1 1 450px;
   position: relative;
-  width: 100%;
+  width: 80%;
   color: white;
   text-align: center;
 }
 
+
+
 .img-category {
   width: 100%;
-  /*min-width: 300px;
-  */
   max-width: 400px;
   min-width: 300px;
   min-height: 300px;
@@ -376,7 +487,6 @@ parte sui libri
 
 .img-category:hover {
   opacity: 0.7;
-  transform: scale(1.05);
 }
 
 .centered {
@@ -401,6 +511,8 @@ parte sui libri
   background-color: #1c21493b;
   margin-bottom: 2em;
   margin-top: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .h4 {
@@ -408,3 +520,4 @@ parte sui libri
   color: white;
 }
 
+/* buon colore rgba(223, 186, 186, 0.698)  rgb(125, 180, 143); */
