@@ -71,40 +71,6 @@ let swiper = new Swiper(".mySwiper", {
 
   $(document).ready(function(){
 
-    // gallery fading images
-
-    var counter = 0;
-     t1 = setInterval(function(){
-        $(".meal-img").fadeOut(3000, function(){
-          $(".meal-img").attr("src", "./img/2.jpg");
-          $(".meal-img").fadeIn(3000);
-          $(".meal-img").fadeOut(3000, function(){
-            $(".meal-img").attr("src", "./img/1.jpg");
-           // $(".meal-img").fadeIn("slow");
-          });
-        });
-        counter+=1;
-        if (counter==1) clearInterval(t1);
-        
-      }, 4000);
-      
-      var c=0;
-      t2 = setInterval(function(){
-        $(".meal-img").fadeOut(3000, function(){
-          $(".meal-img").attr("src", "./img/5.jpg");
-          $(".meal-img").fadeIn(3000);
-          $(".meal-img").fadeOut(3000, function(){
-            $(".meal-img").attr("src", "./img/4.jpg");
-            $(".meal-img").fadeIn(3000);
-          });
-        });
-        c+=1;
-        if (c==1){
-          clearInterval(t2);
-        }
-      }, 4000);
-      
-
    
     // first-category
     var original = $("#centered1").text();
