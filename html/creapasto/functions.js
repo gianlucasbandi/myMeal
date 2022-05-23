@@ -1,8 +1,3 @@
-function hideIcon() {
-  var s = document.getElementById("search");
-  s.style.backgroundImage = 'none';
-}
-
 function addRows() {
   var table = document.getElementById('pasto');
   var rowCount = table.rows.length;
@@ -31,7 +26,7 @@ inserisciBtn.addEventListener('click', inserisciAlimento);
 
 function generaTabella() {
   const formData = new FormData();
-  formData.append('data','1999-04-02');
+  formData.append('data',document.querySelector("#data").value);
   fetch('./select.php', {
     method: 'POST',
     header: {
@@ -58,9 +53,14 @@ function generaTabella() {
           <tbody>
             ${generaRighe(data)}
           </tbody>
+          <tr>
+            <td>
+              <button class="aggiungi-alimento">Aggiungi</button>
+            </td>
+          </tr>
         </table>
         `;
-      tabellaContainer.insertAdjacentHTML('beforeend', tabella);
+      tabellaContainer.innerHTML = tabella;
     })
     .catch((error) => {
       console.error('Errore: ', error);
@@ -79,12 +79,10 @@ function generaRighe(alimenti) {
           <td>${alimento.grassi}</td>
           <td>${alimento.calorie}</td>
           <td>
-            <button class="aggiungi-alimento" data-val="${alimento.nome}">Aggiungi</button>
             <button class="elimina-alimento" data-val="${alimento.nome}">Elimina</button>
           </td>
         </tr>
       `;
-
     righe += riga;
   });
   return righe;
@@ -99,8 +97,11 @@ $(function () {
 
 $(function () {
   $("#data").autocomplete({
-    source: 'select.php',
-  });
+    source: "select.php",
+    response: () => {
+      aggiornaTabella();
+    }
+  })
 });
 
 $(function () {
@@ -123,40 +124,39 @@ $(document).ready(function () {
 });
 
 function inserisciAlimento() {
-  fetch('./insert.php', {
-    method: 'POST',
-    header: {
-      'Content-Type': 'application/json'
-    },
-    body: new FormData(document.querySelector('#form'))
-  })
+  if (document.querySelector('#alimento').value=='') {
+    document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Seleziona un alimento da inserire!</p>';
+  }
+  else {
+    document.querySelector('#messaggi').innerHTML = '';
+    fetch('./insert.php', {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      body: new FormData(document.querySelector('#form'))
+    })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      aggiornaTabella();
+      if (data['messaggio'] == "Alimento non presente nel database") {
+        document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Seleziona un alimento tra quelli presenti!</p>';
+      } else {
+        if (data['messaggio'] == "alimento già inserito") {
+          document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Alimento già inserito!</p>';
+        } else {
+          console.log(data);
+          aggiornaTabella();
+        }
+      }
     })
     .catch((error) => {
       console.error('Errore: ', error);
     });
+  }
 }
 
 function aggiornaTabella() {
   let tabella = document.querySelector('table');
-  tabellaContainer.removeChild(tabella);
+  tabellaContainer.innerHTML = "";
   generaTabella();
-}
-
-let btn = document.getElementById("bottone");
-btn.onclick = caricaDocumento;
-function caricaDocumento(e) {
-  var httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = gestisciResponse;
-  httpRequest.open("GET", "../risultati.html", true);
-  httpRequest.send();
-}
-function gestisciResponse(e) {
-  if (e.target.readyState == 4 && e.target.status == 200) {
-    document.getElementById("zonaDinamica").innerHTML =
-      e.target.responseText;
-  }
 }

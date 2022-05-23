@@ -1,6 +1,6 @@
 <?php
 
-require_once('../php/config.php');
+require_once('../../php/config.php');
 session_start();
 
 $email = $_SESSION['user_email'];
@@ -14,7 +14,7 @@ $mese = $date[1];
 $anno = $date[0];
 $query = "SELECT nome,peso,carboidrati,proteine,grassi,calorie
           FROM formato, alimento
-          WHERE pasto_menu_utente=$1 AND alimento_nome=nome AND
+          WHERE alimento_nome=nome AND pasto_menu_utente=$1 AND 
                 pasto_menu_giorno=$2 AND pasto_menu_mese=$3 AND
                 pasto_menu_anno=$4";
 

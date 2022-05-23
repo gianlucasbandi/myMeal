@@ -1,6 +1,6 @@
 <?php
 
-require_once('../php/config.php');
+require_once('../../php/config.php');
 session_start();
 
 $email = $_SESSION['user_email'];
@@ -70,7 +70,8 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                             echo "Errore nell'esecuzione di $query3" . pg_last_error();
                                         }
                                     } else {
-                                        echo "alimento già inserito";
+                                        $data = ["messaggio" => "alimento già inserito"];
+                                        echo json_encode($data);
                                     }
                                 } else {
                                     echo "Errore nell'esecuzione di $queryformato" . pg_last_error();
@@ -98,7 +99,8 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                         echo "Errore nell'esecuzione di $query3" . pg_last_error();
                                     }
                                 } else {
-                                    echo "alimento già inserito";
+                                    $data = ["messaggio" => "alimento già inserito"];
+                                    echo json_encode($data);
                                 }
                             } else {
                                 echo "Errore nell'esecuzione di $queryformato" . pg_last_error();
@@ -143,7 +145,8 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                         echo "Errore nell'esecuzione di $query3" . pg_last_error();
                                     }
                                 } else {
-                                    echo "alimento già inserito";
+                                    $data = ["messaggio" => "alimento già inserito"];
+                                    echo json_encode($data);
                                 }
                             } else {
                                 echo "Errore nell'esecuzione di $queryformato" . pg_last_error();
@@ -171,7 +174,8 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                     echo "Errore nell'esecuzione di $query3" . pg_last_error();
                                 }
                             } else {
-                                echo "alimento già inserito";
+                                $data = ["messaggio" => "alimento già inserito"];
+                                echo json_encode($data);
                             }
                         } else {
                             echo "Errore nell'esecuzione di $queryformato" . pg_last_error();
@@ -185,10 +189,9 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
             echo "Errore nell'esecuzione di $querymenu" . pg_last_error();
         }
     } else {
-        echo "Alimento non presente nel database" . pg_last_error();
+        $data = ["messaggio" => "Alimento non presente nel database"];
+        echo json_encode($data);
     }
 } else {
     echo "Errore nell'esecuzione di $queryalimento" . pg_last_error();
 }
-
-?>

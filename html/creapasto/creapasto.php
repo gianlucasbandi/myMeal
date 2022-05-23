@@ -11,59 +11,32 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="../img/logo-tiny.ico">
+    <link rel="icon" type="image/x-icon" href="../../img/logo-tiny.ico">
     <link rel="stylesheet" href="./style.css">
   	<title>myMeal</title>
 </head>
-<body>
-
-	<br>
-	<br>
-	<br>
-	<div>
-	<form action="#" method="post">    
-		<table id="pasto">
-			<tr>
-				<th id="col0">Nome</th>
-				<th id="col1">Peso</th>
-				<th id="col2">Carboidrati</th>
-				<th id="col3">Proteine</th>
-				<th id="col4">Grassi</th>
-				<th id="col5">Calorie</th>
-			</tr>   
-		</table> 
-		<table> 
-			<tr> 
-				<td><input type="button" class="btn-success" value="Aggiungi alimento" onclick="addRows()"></td> 
-				<td><input type="button" class="btn-danger" value="Elimina alimento" onclick="deleteRows()" /></td> 
-				<td><input type="submit" class="btn-close-white" value="Salva Pasto" /></td> 
-			</tr>  
-		</table> 
-	 </form>
+<body class="text-center">
+	<div class="creapasto">
+	<div class="box ">
+		<form action="./insert.php" id="form" method="POST">
+			<label for="date">Data</label>
+			<input type="date" name="data" id="data" required>
+			<label for="tipo">Pasto</label>
+			<select name="tipo" id="tipo" required>
+				<option value="colazione">Colazione</option>
+				<option value="pranzo">Pranzo</option>
+				<option value="cena">Cena</option>
+				<option value="spuntino">Spuntino</option>
+			</select>
+			<label for="alimento">Alimento</label>
+			<input type="text" id="alimento" name="alimento" placeholder="Cerca alimento" required autofocus>
+		</form>
+		<button id="nuova-riga">Inserisci alimento</button>
 	</div>
-	<br>
-	<br>
-	<br>
-
-	<form action="./insert.php" id="form" method="POST">
-		<label for="date">Data</label>
-		<input type="date" name="data" id="data" required>
-		<label for="tipo">Pasto</label>
-		<select name="tipo" id="tipo" required>
-			<option value="colazione">Colazione</option>
-			<option value="pranzo">Pranzo</option>
-			<option value="cena">Cena</option>
-			<option value="spuntino">Spuntino</option>
-		</select>
-		<label for="alimento">Alimento</label>
-		<input type="text" id="alimento" name="alimento" placeholder="Cerca alimento" required autofocus>
-		<br>
-		<input type="submit" value="invia">
-	</form>
-	<br>
-	<button id="bottone">premi</button>
-	<button id="nuova-riga">Inserisci alimento</button>
+	
 	<div id="tabella-container"></div>
+	<div id="messaggi"></div>
+	</div>
 
 	<!-- Footer -->
 	<footer class="text-center text-lg-start text-white mt-5">
@@ -74,7 +47,7 @@
 			<!--Grid column-->
 			<div class="mb-4 mb-md-0">
 			  <div class="d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
-				<img src="../img/logo_white_large.png" height="70"/>
+				<img src="../../img/logo_white_large.png" height="70"/>
 			  </div>
 			</div>
 			<!--Grid column-->
