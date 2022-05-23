@@ -301,6 +301,8 @@ body {
  
 
   .dropdown-center {
+    display: flex;
+    justify-content: center;
     margin-top: 3em;
     
   }
@@ -383,30 +385,10 @@ body {
   }
 
   .new-a:hover {
-    color: #9094b3 !important;
+    color: #9394a0 !important;
 
   }
 
-/*
-.card-container{
-  display: grid;
-  grid-template-columns: repeat(autofit, minmax(300px, 1fr));
-  gap: 2%;
-  margin: 0 auto;
-  margin-top: 2em;
-  margin-left: 5%; 
-  margin-right: 3%; 
-  margin-bottom: 6%;
-}
-.card {
-  width: 100%;
-  margin-bottom: 2em;
-}
-
-@media (min-width: 1200px) {
-  .card-container { grid-template-columns: repeat(3, 1fr); }
-}
-*/
 
 .card-container {
   display: flex;
@@ -491,7 +473,7 @@ parte su profilo autori
   height: 0;
   top: 0;
   opacity: 0;
-  background-color: rgba(95, 158, 160, 0.966);
+  background-color: #34495e;
   overflow-y: scroll;
   transition: 0.5s ease;
 }
