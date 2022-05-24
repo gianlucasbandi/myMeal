@@ -17,25 +17,24 @@
 </head>
 <body class="text-center">
 	<div class="creapasto">
-	<div class="box ">
-		<form action="./insert.php" id="form" method="POST">
-			<label for="date">Data</label>
-			<input type="date" name="data" id="data" required>
-			<label for="tipo">Pasto</label>
-			<select name="tipo" id="tipo" required>
-				<option value="colazione">Colazione</option>
-				<option value="pranzo">Pranzo</option>
-				<option value="cena">Cena</option>
-				<option value="spuntino">Spuntino</option>
-			</select>
-			<label for="alimento">Alimento</label>
-			<input type="text" id="alimento" name="alimento" placeholder="Cerca alimento" required autofocus>
-		</form>
-		<button id="nuova-riga">Inserisci alimento</button>
-	</div>
-	
-	<div id="tabella-container"></div>
-	<div id="messaggi"></div>
+		<div class="box ">
+			<form action="./insert.php" id="form" method="POST">
+				<label for="date">Data</label>
+				<input type="date" name="data" id="data" required>
+				<label for="tipo">Pasto</label>
+				<select name="tipo" id="tipo" required>
+					<option value="colazione">Colazione</option>
+					<option value="pranzo">Pranzo</option>
+					<option value="cena">Cena</option>
+					<option value="spuntino">Spuntino</option>
+				</select>
+				<label for="alimento">Alimento</label>
+				<input type="text" id="alimento" name="alimento" placeholder="Cerca alimento" required autofocus>
+			</form>
+			<button id="nuova-riga">Inserisci alimento</button>
+		</div>
+		<div id="tabella-container"></div>
+		<div id="messaggi"></div>
 	</div>
 
 	<!-- Footer -->
@@ -52,7 +51,7 @@
 			</div>
 			<!--Grid column-->
 			<div class="row d-flex align-items-center justify-content-center mx-auto">
-			  <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mt-5">
+			  <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mt-5 mx-auto">
 				<h5 class="text-center mb-4 ">Gianluca Sbandi</h5>
 				<ul class="list-unstyled">
 				  <li>
@@ -63,7 +62,7 @@
 				</ul>
 			  </div>
 			  <!--Grid column-->
-			  <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mt-5">
+			  <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mt-5 mx-auto">
 				<h5 class="text-center mb-4 ">Alessia Pontiggia</h5>
 				<ul class="list-unstyled">
 				  <li>
@@ -74,8 +73,8 @@
 				</ul>
 			  </div>
 			  <!--Grid column-->
-			  <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mt-5">
-				<h5 class="text-center mb-4 ">Lorenzo Proietti Cosimi</h5>
+			  <div class="col-lg-3 col-md-6 mb-4 mb-md-0 mt-5 mx-auto">
+				<h5 class="text-center mb-4">Lorenzo Proietti Cosimi</h5>
 				<ul class="list-unstyled">
 				  <li>
 					<i>
@@ -100,8 +99,8 @@
 
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="./functions.js"></script>
 </body>
 </html>

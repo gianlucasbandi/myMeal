@@ -15,11 +15,12 @@ create table utente (
 );
 
 create table menu (
-	id integer primary key,
 	utente varchar(30),
 	giorno integer,
 	mese integer,
 	anno integer,
+	primary key(utente, giorno, mese, anno),
+	unique(utente,giorno, mese, anno),
 	foreign key(utente) references utente(email)
 );
 
@@ -41,10 +42,7 @@ create table formato (
 	pasto_menu_giorno integer,
 	pasto_menu_mese integer,
 	pasto_menu_anno integer,
+	alimento_grammi integer,
 	primary key(alimento_nome, pasto_tipo, pasto_menu_utente, pasto_menu_giorno, pasto_menu_mese, pasto_menu_anno),
 	foreign key(pasto_tipo, pasto_menu_utente, pasto_menu_giorno, pasto_menu_mese, pasto_menu_anno) references pasto(tipo, menu_utente, menu_giorno, menu_mese, menu_anno)
 );
-
-esempi
-
-select nome,tipo,alimento_nome from utente,pasto, formato where nome='Gianluca'

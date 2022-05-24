@@ -3,6 +3,10 @@
 require_once('../../php/config.php');
 session_start();
 
+if (!isset($_SESSION['user_email'])) {
+  header("location: ..");
+}
+
 $email = $_SESSION['user_email'];
 if (isset($_POST['data'])) {
   $date = explode('-', $_POST['data']);
@@ -23,7 +27,6 @@ if ($result = pg_query_params($dbconn, $query, array($email, $giorno, $mese, $an
   while ($tupla = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     $tmp;
     $tmp['nome'] = $tupla['nome'];
-    $tmp['peso'] = $tupla['peso'];
     $tmp['carboidrati'] = $tupla['carboidrati'];
     $tmp['proteine'] = $tupla['proteine'];
     $tmp['grassi'] = $tupla['grassi'];

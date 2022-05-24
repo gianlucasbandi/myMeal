@@ -2,6 +2,9 @@
 
 require_once('../../php/config.php');
 session_start();
+if (!isset($_SESSION['user_email'])) {
+    header("location: ..");
+}
 
 $email = $_SESSION['user_email'];
 $date = explode('-', $_POST['data']);
@@ -10,6 +13,7 @@ $mese = $date[1];
 $anno = $date[0];
 $tipo = $_POST['tipo'];
 $alimento = $_POST['alimento'];
+$grammi = '100';
 
 $queryalimento = "SELECT * FROM alimento WHERE nome=$1";
 $querymenu = "SELECT * FROM menu WHERE utente=$1 AND 
@@ -21,7 +25,7 @@ $queryformato = "SELECT * FROM formato WHERE alimento_nome=$1 AND pasto_tipo=$2 
                 AND pasto_menu_anno=$6";
 $query1 = "INSERT INTO menu VALUES ($1,$2,$3,$4)";
 $query2 = "INSERT INTO pasto VALUES ($1,$2,$3,$4,$5)";
-$query3 = "INSERT INTO formato VALUES ($1,$2,$3,$4,$5,$6)";
+$query3 = "INSERT INTO formato VALUES ($1,$2,$3,$4,$5,$6,$7)";
 
 if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
     if (pg_numrows($result) > 0) {
@@ -62,7 +66,7 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                         if ($result = pg_query_params(
                                             $dbconn,
                                             $query3,
-                                            array($alimento, $tipo, $email, $giorno, $mese, $anno)
+                                            array($alimento, $tipo, $email, $giorno, $mese, $anno, $grammi)
                                         )) {
                                             $data = ["messaggio" => "Riga inserita con successo"];
                                             echo json_encode($data);
@@ -91,7 +95,7 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                     if ($result = pg_query_params(
                                         $dbconn,
                                         $query3,
-                                        array($alimento, $tipo, $email, $giorno, $mese, $anno)
+                                        array($alimento, $tipo, $email, $giorno, $mese, $anno, $grammi)
                                     )) {
                                         $data = ["messaggio" => "Riga inserita con successo"];
                                         echo json_encode($data);
@@ -137,7 +141,7 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                     if ($result = pg_query_params(
                                         $dbconn,
                                         $query3,
-                                        array($alimento, $tipo, $email, $giorno, $mese, $anno)
+                                        array($alimento, $tipo, $email, $giorno, $mese, $anno, $grammi)
                                     )) {
                                         $data = ["messaggio" => "Riga inserita con successo"];
                                         echo json_encode($data);
@@ -166,7 +170,7 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
                                 if ($result = pg_query_params(
                                     $dbconn,
                                     $query3,
-                                    array($alimento, $tipo, $email, $giorno, $mese, $anno)
+                                    array($alimento, $tipo, $email, $giorno, $mese, $anno, $grammi)
                                 )) {
                                     $data = ["messaggio" => "Riga inserita con successo"];
                                     echo json_encode($data);

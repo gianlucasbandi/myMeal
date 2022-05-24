@@ -1,25 +1,3 @@
-function addRows() {
-  var table = document.getElementById('pasto');
-  var rowCount = table.rows.length;
-  var cellCount = table.rows[0].cells.length;
-  var row = table.insertRow(rowCount);
-  for (var i = 0; i < cellCount; i++) {
-    var cell = 'cell' + i;
-    cell = row.insertCell(i);
-    var copycel = document.getElementById('col' + i).innerHTML;
-    cell.innerHTML = copycel;
-  }
-}
-function deleteRows() {
-  var table = document.getElementById('pasto');
-  var rowCount = table.rows.length;
-  if (rowCount > '1') {
-    var row = table.deleteRow(rowCount - 1);
-    rowCount--;
-  }
-}
-
-let alimenti;
 let inserisciBtn = document.querySelector('#nuova-riga');
 let tabellaContainer = document.querySelector("#tabella-container");
 inserisciBtn.addEventListener('click', inserisciAlimento);
@@ -43,7 +21,6 @@ function generaTabella() {
           <thead>
             <tr>
               <td>Nome</td>
-              <td>Peso</td>
               <td>Carboidrati</td>
               <td>Proteine</td>
               <td>Grassi</td>
@@ -53,14 +30,17 @@ function generaTabella() {
           <tbody>
             ${generaRighe(data)}
           </tbody>
-          <tr>
-            <td>
-              <button class="aggiungi-alimento">Aggiungi</button>
-            </td>
-          </tr>
         </table>
         `;
       tabellaContainer.innerHTML = tabella;
+      let deleteBtn = document.querySelectorAll(".elimina-alimento");
+      let updateBtn = document.querySelectorAll(".update-alimento");
+      for(let i = 0; i < deleteBtn.length; i++){
+        deleteBtn[i].addEventListener('click',eliminaAlimento);
+      }
+      for(let i = 0; i < updateBtn.length; i++){
+        updateBtn[i].addEventListener('click',modificaAlimento);
+      }
     })
     .catch((error) => {
       console.error('Errore: ', error);
@@ -73,12 +53,13 @@ function generaRighe(alimenti) {
     let riga = `
         <tr>
           <td>${alimento.nome}</td>
-          <td>${alimento.peso}</td>
           <td>${alimento.carboidrati}</td>
           <td>${alimento.proteine}</td>
           <td>${alimento.grassi}</td>
           <td>${alimento.calorie}</td>
           <td>
+            <input type="text" placeholder="g" data-val="${alimento.nome} id="grammi" maxlength='5' size='2'>
+            <button class="modifica-alimento" data-val="${alimento.nome}">Modifica</button>
             <button class="elimina-alimento" data-val="${alimento.nome}">Elimina</button>
           </td>
         </tr>
@@ -97,7 +78,7 @@ $(function () {
 
 $(function () {
   $("#data").autocomplete({
-    source: "select.php",
+    source: 'select.php',
     response: () => {
       aggiornaTabella();
     }
@@ -129,12 +110,13 @@ function inserisciAlimento() {
   }
   else {
     document.querySelector('#messaggi').innerHTML = '';
+    let formdata = new FormData(document.querySelector('#form'));
     fetch('./insert.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
       },
-      body: new FormData(document.querySelector('#form'))
+      body: formdata
     })
     .then(response => response.json())
     .then(data => {
@@ -153,6 +135,45 @@ function inserisciAlimento() {
       console.error('Errore: ', error);
     });
   }
+}
+
+function eliminaAlimento(e){
+  let data = new FormData(document.querySelector('#form'));
+  data.append('data-val',e.target.getAttribute('data-val'));
+  fetch('./delete.php', {
+    method: 'POST',
+    header: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+    aggiornaTabella();
+  })
+  .catch((error) => {
+    console.error('Errore: ', error);
+  });
+}
+
+function modificaAlimento(e){
+  let data = new FormData(document.querySelector('#form'));
+  let id = e.target.getAttribute('data-val');
+  data.append('peso', document.querySelector('#grammi '));
+  fetch('./update.php', {
+    method: 'POST',
+    header: {
+      'Content-Type': 'application/json'
+    },
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+    aggiornaTabella();
+  })
+  .catch((error) => {
+    console.error('Errore: ', error);
+  });
 }
 
 function aggiornaTabella() {
