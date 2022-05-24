@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="./img/logo-tiny.ico">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./articoli/css/articoli-homepage.css">
-    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <title>Articoli</title>
 
@@ -16,7 +16,7 @@
 <body> 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">
+          <a class="navbar-brand" href="../index.php">
             <svg xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 116.661 36" width="116.661" height="36">
               <g fill="#00936f" color="#00936f" transform="translate(0 9.879999999999999) scale(0.2800001)">
@@ -37,21 +37,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="../../creapasto.html">Crea Pasto</a>
+                <a class="nav-link" href="./creapasto/creapasto.php">Crea Pasto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../ricette.html">Ricette</a>
+                <a class="nav-link" href="./ricette.html">Ricette</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../articoli.html">Articoli</a>
+                <a class="nav-link" href="./articoli.html">Articoli</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../esperienze.html">Libri</a>
+                <a class="nav-link" href="./esperienze.html">Libri</a>
               </li>
             </ul>
-            <form method="get" action="./html/risultati.html" name="search" class="d-flex">
-              <input class="form-control me-2" placeholder="Cerca" id="search" name="param" type="search" aria-label="Search">
-            </form>
         </div>
     </nav>
 
@@ -61,7 +58,7 @@
             
                 <div class="text-top">
                     <h1>Articoli</h1>
-                    <p>Scopri le curiosità della dieta, i migliori piani di allenamento e le proprieta di alcuni alimenti</p>                                    
+                    <p>Scopri le curiosità sulla dieta, i migliori piani di allenamento e le proprieta di alcuni alimenti</p>                                    
                 </div>
             </div>   
         </div>
@@ -69,42 +66,34 @@
     </div>
 
     <div class="card-container">
-        <div class="card-titolo">
+        <div class="titoli">
             <h1>Categorie</h1>
         </div>
 
         <div class="card-content">
+
             <div class="card-item">
                 <div class="card">
-                    <div class="image">
+                    <div class="image" id="image1">
                         <a href="./articoli/alimenti.html">
-                        <img src="../img/articoli/homepage-alimenti.png"> 
-                        <div class="card-text">
+                        <img src="../img/articoli/homepage-alimenti.png">
+                        <div class="card-text" id="card-hover1">
                             Alimenti
-                        </div>  
-                        <div class="card-overlay-1">
-                            <div class="card-text">
-                                Descrizione Alimenti
-                            </div>
-                        </div>           
-                        </a>
-                    </div>
+                        </div>
+                        </a> 
+                    </div> 
                 </div>
+                
             </div>
             
             <div class="card-item">
                 <div class="card">
-                    <div class="image">
+                    <div class="image" id="image2">
                         <a href="./articoli/allenamento.html">
                         <img src="../img/articoli/homepage-allenamento.png">
-                        <div class="card-text">
+                        <div class="card-text" id="card-hover2">
                             Allenamento
                         </div>
-                        <div class="card-overlay-2">
-                            <div class="card-text">
-                                Descrizione Allenamento
-                            </div>
-                        </div> 
                         </a>
                     </div>
                 </div>
@@ -112,17 +101,12 @@
             
             <div class="card-item">
                 <div class="card">
-                    <div class="image">
+                    <div class="image" id="image3">
                         <a href="./articoli/dieta.html">
                         <img src="../img/articoli/homepage-dieta.png">
-                        <div class="card-text">
+                        <div class="card-text" id="card-hover3">
                             Dieta
                         </div>
-                        <div class="card-overlay-3">
-                            <div class="card-text">
-                                Descrizione Dieta
-                            </div>
-                        </div> 
                         </a>
                     </div>
                 </div>
@@ -133,7 +117,7 @@
     
      
     <div class="container-swiper">
-        <div class="titolo-swiper">
+        <div class="titoli">
             <h1>Articoli</h1>
         </div>
     <div class="container-swiper-articoli">
@@ -148,10 +132,9 @@
                             <div class="card-slider-image"><img src="../img/articoli/alimenti-frutta-s.png"></div>
                             <div class="card-slider-body">
                                 <div class="tag-container">
-                                    <span class="tag">Alimenti</span>
+                                    <span class="tag" id="tag1">Alimenti</span>
                                 </div>
                                 <div class="card-slider-title">Frutta: elenco, proprietà, valori nutrizionali</div>
-                                <p class="card-slider-text">Breve descrizione </p>
                             </div>
                         </div>
                     </a>
@@ -163,10 +146,9 @@
                             <div class="card-slider-image"><img src="../img/articoli/allenamento-massa-s.png"></div>
                             <div class="card-slider-body">
                                 <div class="tag-container">
-                                    <span class="tag">Allenamento</span>
+                                    <span class="tag" id="tag2">Allenamento</span>
                                 </div>
                                 <div class="card-slider-title"> 5 idee per aiutarti a mettere su massa </div>
-                                <p class="card-slider-text">descrizione </p>
                             </div>
                         </div>
                     </a>
@@ -178,10 +160,9 @@
                             <div class="card-slider-image"><img src="../img/articoli/dieta-vegan-s.png"></div>
                             <div class="card-slider-body">
                                 <div class="tag-container">
-                                    <span class="tag">Dieta</span>
+                                    <span class="tag" id="tag3">Dieta</span>
                                 </div>
                                 <div class="card-slider-title">Dieta vegana: pregi e difetti</div>
-                                <p class="card-slider-text">descrizione </p>
                             </div>
                         </div>
                     </a>
@@ -193,10 +174,9 @@
                             <div class="card-slider-image"><img src="../img/articoli/alimenti-caffe-s.png"></div>
                             <div class="card-slider-body">
                                 <div class="tag-container">
-                                    <span class="tag">Alimenti</span>
+                                    <span class="tag" id="tag4">Alimenti</span>
                                 </div>
                                 <div class="card-slider-title">Quanti caffè si possono bere al giorno?</div>
-                                <p class="card-slider-text">descrizione </p>
                             </div>
                         </div>
                     </a>
@@ -204,14 +184,13 @@
 
                 <div class="swiper-slide card-slider-item">
                     <a href="">
-                        <div class="card-slider">
+                        <div class="card-slider" id="card-slider">
                             <div class="card-slider-image"><img src="../img/articoli/allenamento-cardio-s.png"></div>
                             <div class="card-slider-body">
                                 <div class="tag-container">
-                                    <span class="tag">Allenamento</span>
+                                    <span class="tag" id="tag5">Allenamento</span>
                                 </div>
                                 <div class="card-slider-title"> Perdere peso: cardio o sollevamento pesi?</div>
-                                <p class="card-slider-text">descrizione </p>
                             </div>
                         </div>
                     </a>
@@ -223,10 +202,9 @@
                             <div class="card-slider-image"><img src="../img/articoli/dieta-veget-s.png"></div>
                             <div class="card-slider-body">
                                 <div class="tag-container">
-                                    <span class="tag">Dieta</span>
+                                    <span class="tag" id="tag6">Dieta</span>
                                 </div>
                                 <div class="card-slider-title"> Come funziona la dieta vegetariana? </div>
-                                <p class="card-slider-text">descrizione </p>
                             </div>
                         </div>
                     </a>
@@ -242,7 +220,7 @@
 
 
     <div class="consigli">
-        <div class="titolo-consigli">
+        <div class="titoli">
             <h1>Alcuni consigli</h1>
         </div>
 
@@ -252,73 +230,86 @@
 
                 <div class="card-sq-item">
                     <a href="./articoli/alimenti/articolo-carne.html" class="not-underlined">
-                        <div class="card-sq">
-                            <div class="image-card-sq">
-                                <img src="../img/articoli/alimenti-carne-sq.png">
-                                <div class="titolo-card-sq"><h1>Qual è la differenza tra carne bianca e rossa?</h1></div>
-                            </div>
-                            
+                        <div class="card-sq1">
+                            <img src="../img/articoli/alimenti-carne-sq.png" class="img-sq">      
+                            <div class="titolo-card-sq"><h1>Qual è la differenza tra carne bianca e rossa?</h1></div>              
                         </div>
                     </a>
                 </div>
 
                 <div class="card-sq-item">
                     <a href="./articoli/allenamento/articolo-corsa.html" class="not-underlined">
-                        <div class="card-sq">
-                            <div class="image-card-sq">
-                                <img src="../img/articoli/allenamento-corsa-sq.png">
-                                <div class="titolo-card-sq"><h1>Quanto devo correre per dimagrire?</h1></div>
-                            </div>
-                            
+                        <div class="card-sq2">
+                            <img src="../img/articoli/allenamento-corsa-sq.png" class="img-sq">      
+                            <div class="titolo-card-sq"><h1>Quanto devo correre per dimagrire?</h1></div>              
                         </div>
                     </a>
                 </div>
+
 
             </div>
 
 
             <div class="container-dw">
-
                 <div class="card-dw-item">
-                    <a href="./articoli/alimenti/articolo-cioccolato.html">
-                        <div class="card-dw">
-                            <div class="card-dw-image"><img src="../img/articoli/alimenti-cacao-s.jpg"></div>
-                            <div class="card-dw-body">
-                                <div class="card-dw-title"><h5>Cioccolato fondente: benefici e controindicazioni</h5></div>
-                                
+                    <div class="card-dw">
+                        <a href="./articoli/alimenti/articolo-acqua.html">
+                        <div class="titolo-dw"><h1>Perché è importante bere?</h1></div>
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="../img/articoli/alimenti-acqua-s.png">
                             </div>
                         </div>
-                    </a>
+                        <div class="face face2">
+                            <div class="content">
+                                <p>L'acqua è un bene di valore inestimabile, per quale motivo?</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card-dw-item">
+                    <div class="card-dw">
+                        <a href="./articoli/allenamento/articolo-funzionale.html">
+                        <div class="titolo-dw"><h1>Allenamento funzionale: a cosa serve?</h1></div>
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="../img/articoli/allenamento-funzionale-s.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <p>Allenamento funzionale: è utile? A cosa serve?</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-dw-item">
+                    <div class="card-dw">
+                        <a href="./articoli/dieta/articolo-mediterr.html">
+                        <div class="titolo-dw"><h1>Dieta mediterranea: cos'è?</h1></div>
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="../img/articoli/dieta-mediterranea-s.png">
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <p>Perché quella mediterranea è la dieta migliore al mondo?</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
                 </div>
             
-                <div class="card-dw-item">
-                    <a href="./articoli/allenamento/articolo-funzionale.html">
-                        <div class="card-dw">
-                            <div class="card-dw-image"><img src="../../myMeal-main/img/articoli/allenamento-funzionale-s.png"></div>
-                            <div class="card-dw-body">
-                                <div class="card-dw-title"><h5>Allenamento funzionale: a cosa serve?</h5></div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="card-dw-item">
-                    <a href="./articoli/dieta/articolo-mediterr.html">
-                        <div class="card-dw">
-                            <div class="card-dw-image"><img src="../../myMeal-main/img/articoli/dieta-mediterranea-s.png"> </div>
-                            <div class="card-dw-body">
-                                <div class="card-dw-title"><h5>Dieta mediterranea: cos'è?</h5></div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                
 
             </div>
 
-        
         </div>
-
-
 
     </div>
 
@@ -352,7 +343,7 @@
 				<ul class="list-unstyled">
 				  <li>
 					<i>
-					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:pontiggia.99999@studenti.uniroma1.it">pontiggia.99999@studenti.uniroma1.it</a>
+					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:pontiggia.99999@studenti.uniroma1.it">pontiggia.1892079@studenti.uniroma1.it</a>
 					</i>
 				  </li>
 				</ul>
@@ -363,7 +354,7 @@
 				<ul class="list-unstyled">
 				  <li>
 					<i>
-					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:proietticosimi.99999@studenti.uniroma1.it">proietticosimi.99999@studenti.uniroma1.it</a>
+					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:proietticosimi.99999@studenti.uniroma1.it">proietticosimi.1887440@studenti.uniroma1.it</a>
 					</i>
 				  </li>
 				</ul>
@@ -384,7 +375,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./js/functions.js"></script>
+    <script src="./articoli/js/function.js "></script>
 
       <!-- Initialize Swiper -->
     <script>
@@ -419,6 +410,7 @@
                 },
             },
         });
+
     </script>
 
 </body>
