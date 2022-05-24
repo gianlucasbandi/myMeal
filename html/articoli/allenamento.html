@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="./img/logo-tiny.ico">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/articoli-categorie.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     <style>
         .titoli{
@@ -28,7 +29,7 @@
 <body> 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">
+          <a class="navbar-brand" href="../../index.php">
             <svg xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 116.661 36" width="116.661" height="36">
               <g fill="#00936f" color="#00936f" transform="translate(0 9.879999999999999) scale(0.2800001)">
@@ -49,21 +50,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="../../creapasto.html">Crea Pasto</a>
+                <a class="nav-link" href="../creapasto/creapasto.php">Crea Pasto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../ricette.html">Ricette</a>
+                <a class="nav-link" href="../ricette.html">Ricette</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../articoli.html">Articoli</a>
+                <a class="nav-link" href="../articoli.html">Articoli</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../esperienze.html">Libri</a>
+                <a class="nav-link" href="../esperienze.html">Libri</a>
               </li>
             </ul>
-            <form method="get" action="./html/risultati.html" name="search" class="d-flex">
-              <input class="form-control me-2" placeholder="Cerca" id="search" name="param" type="search" aria-label="Search">
-            </form>
         </div>
     </nav>
 
@@ -169,15 +167,17 @@
         <div class="cards">
   
             <div class="cards-item">
-                <a href="./allenamento/articolo-corsa.html">
+                
                     <div class="card">
                         <div class="card-image"><img src="../../img/articoli/allenamento-corsa-s.png"></div>
                         <div class="card-body">
                             <div class="card-title"><h4>Quanto devo correre per dimagrire?</h4></div>
-                            <p class="card-text"> Descrizione Descrizione Descrizione Descrizione</p>
+                            <div class="card-button">
+                                <a href="./allenamento/articolo-corsa.html" class="but-top"><p>Leggi</p></a>
+					        </div>
                         </div>
                     </div>
-                </a>
+                
             </div>
         
             <div class="cards-item">
@@ -186,7 +186,9 @@
                         <div class="card-image"><img src="../../img/articoli/allenamento-calorie-s.png"></div>
                         <div class="card-body">
                             <div class="card-title"><h4>Deficit calorico: cos’è?</h4></div>
-                            <p class="card-text"> Descrizione Descrizione Descrizione Descrizione</p>
+                            <div class="card-button">
+                                <a href="./allenamento/articolo-deficit.html" class="but-top"><p>Leggi</p></a>
+					        </div>
                         </div>
                     </div>
                 </a>
@@ -198,7 +200,9 @@
                         <div class="card-image"><img src="../../img/articoli/allenamento-funzionale-s.png"></div>
                         <div class="card-body">
                             <div class="card-title"><h4>Allenamento funzionale: a cosa serve?</h4></div>
-                            <p class="card-text"> Descrizione Descrizione Descrizione Descrizione</p>
+                            <div class="card-button">
+                                <a href="./allenamento/articolo-funzionale.html" class="but-top"><p>Leggi</p></a>
+					        </div>
                         </div>
                     </div>
                 </a>
@@ -215,17 +219,12 @@
 
             <div class="card-item">
                 <div class="card">
-                    <div class="image">
+                    <div class="image" id="image1">
                         <a href="./alimenti.html">
                         <img src="../../img/articoli/homepage-alimenti.png">
-                        <div class="card-text-bottom">
+                        <div class="card-text-bottom" id="card-hover1">
                             Alimenti
                         </div>
-                        <div class="card-overlay-1">
-                            <div class="card-text-bottom">
-                                Descrizione Alimenti
-                            </div>
-                        </div> 
                         </a>
                     </div>
                 </div>
@@ -233,17 +232,12 @@
             
             <div class="card-item">
                 <div class="card">
-                    <div class="image">
+                    <div class="image" id="image2">
                         <a href="./dieta.html">
                         <img src="../../img/articoli/homepage-dieta.png">
-                        <div class="card-text-bottom">
+                        <div class="card-text-bottom" id="card-hover2">
                             Dieta
                         </div>
-                        <div class="card-overlay-3">
-                            <div class="card-text-bottom">
-                                Descrizione Dieta
-                            </div>
-                        </div> 
                         </a>
                     </div>
                 </div>
@@ -285,7 +279,7 @@
 				<ul class="list-unstyled">
 				  <li>
 					<i>
-					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:pontiggia.99999@studenti.uniroma1.it">pontiggia.99999@studenti.uniroma1.it</a>
+					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:pontiggia.99999@studenti.uniroma1.it">pontiggia.1892079@studenti.uniroma1.it</a>
 					</i>
 				  </li>
 				</ul>
@@ -296,7 +290,7 @@
 				<ul class="list-unstyled">
 				  <li>
 					<i>
-					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:proietticosimi.99999@studenti.uniroma1.it">proietticosimi.99999@studenti.uniroma1.it</a>
+					  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:proietticosimi.99999@studenti.uniroma1.it">proietticosimi.1887440@studenti.uniroma1.it</a>
 					</i>
 				  </li>
 				</ul>
@@ -314,5 +308,7 @@
 		<!-- Copyright -->
 	</footer>
 	<!-- Footer -->
+
+    <script src="./js/function.js"></script>
 
 </body>
