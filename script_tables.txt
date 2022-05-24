@@ -1,5 +1,5 @@
 create table alimento (
-	nome varchar(30) primary key,
+	nome varchar(50) primary key,
 	peso integer,
 	carboidrati float,
 	proteine float,
@@ -36,7 +36,7 @@ create table pasto (
 );
 
 create table formato (
-	alimento_nome varchar(30),
+	alimento_nome varchar(50),
 	pasto_tipo varchar(30),
 	pasto_menu_utente varchar(30),
 	pasto_menu_giorno integer,

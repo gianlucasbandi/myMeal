@@ -16,13 +16,14 @@ if (isset($_POST['data'])) {
 $giorno = $date[2];
 $mese = $date[1];
 $anno = $date[0];
-$query = "SELECT nome,peso,carboidrati,proteine,grassi,calorie
+$tipo = $_POST['tipo'];
+$query = "SELECT nome,alimento_grammi,carboidrati,proteine,grassi,calorie
           FROM formato, alimento
           WHERE alimento_nome=nome AND pasto_menu_utente=$1 AND 
                 pasto_menu_giorno=$2 AND pasto_menu_mese=$3 AND
-                pasto_menu_anno=$4";
+                pasto_menu_anno=$4 AND pasto_tipo=$5";
 
-if ($result = pg_query_params($dbconn, $query, array($email, $giorno, $mese, $anno))) {
+if ($result = pg_query_params($dbconn, $query, array($email, $giorno, $mese, $anno, $tipo))) {
   $data = [];
   while ($tupla = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     $tmp;
@@ -31,6 +32,7 @@ if ($result = pg_query_params($dbconn, $query, array($email, $giorno, $mese, $an
     $tmp['proteine'] = $tupla['proteine'];
     $tmp['grassi'] = $tupla['grassi'];
     $tmp['calorie'] = $tupla['calorie'];
+    $tmp['grammi'] = $tupla['alimento_grammi'];
     array_push($data, $tmp);
   }
   echo json_encode($data);
