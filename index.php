@@ -50,15 +50,7 @@
             <a class="nav-link" href="./html/esperienze.html">Libri</a>
           </li>        
         </ul>
-        <div class="nav-item"><a style="color: #1c2149;" class="nav-link" 
-            href=<?php
-              if (isset($_SESSION['user_email'])) {
-                echo "'./php/welcome.php'><i>Ciao " . $_SESSION['name'];
-              } else {
-                echo "'./login/login.html'><i class='fa fa-user-circle fa-2x'>";
-              } ?>
-          </i></a>
-        </div>
+
       </div>
     </div>
   </nav>
