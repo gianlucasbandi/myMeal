@@ -9,9 +9,7 @@ body{
 .navbar {
     background: rgba(95, 158, 160, 0.8);
     backdrop-filter: blur(8px);
-    position: absolute;
 }
-
 .navbar-light .navbar-toggler {
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
@@ -25,7 +23,6 @@ body{
 .navbar-light .navbar-toggler:focus {
     box-shadow: none;
 }
-
 .navbar-light .navbar-toggler:active {
     color: #fff;
     background-color: #dddddd;
@@ -33,7 +30,6 @@ body{
     transition: 1s;
     box-shadow: 0 0.2em #dfd9d9;
 }
-
 .nav-link {
     font-size: large;
 }
@@ -205,6 +201,12 @@ a:hover{
     font-weight: bold;
     font-size: 40px;
 }
+
+@media (max-width: 330px) {
+    .titolo-card-sx h1{
+        font-size: 10vw;
+    }
+}
   
 .cards-dx{
     display: flex;
@@ -269,6 +271,12 @@ a:hover{
     font-size: 20px;
 }
 
+@media (max-width: 300px){
+    .titolo-card-dx h1{
+        font-size: 6vw;
+    }
+}
+
 .titoli{
     max-width: 800px;
     margin: auto;
@@ -291,6 +299,7 @@ a:hover{
     margin:auto;
     margin-top:30px;
     max-width: 950px;
+    height: auto;
 }
 
 .articoli .cards {
@@ -298,14 +307,14 @@ a:hover{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    height: 360px;
+    height:auto;
 }
   
 .cards-item {
     display: flex;
     padding: 15px;
     max-width: 300px;
-    height: 100%;
+    height: 350px;
 }
   
 .articoli .card {

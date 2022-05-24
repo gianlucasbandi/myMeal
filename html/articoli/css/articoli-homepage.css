@@ -17,7 +17,6 @@ a:hover{
 .navbar {
   background: rgba(95, 158, 160, 0.8);
   backdrop-filter: blur(8px);
-  position: absolute;
 }
 .navbar-light .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -523,6 +522,12 @@ a:hover{
   font-size: 25px;
   font-weight: bold;
   color: white;
+}
+
+@media(max-width: 290px){
+  .card-dw .content p{
+    font-size: 14px;
+  }
 }
 
 
