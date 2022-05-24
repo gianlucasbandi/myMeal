@@ -50,7 +50,23 @@
             <a class="nav-link" href="./html/esperienze.html">Libri</a>
           </li>        
         </ul>
-
+        <div class="nav-item">
+          <a style="color: #1c2149;" class="nav-link" 
+            <?php
+              if (isset($_SESSION['user_email'])) {
+                echo "<i>Ciao " . $_SESSION['name'] . "</i>";
+              } else {
+                echo "<a href='./login/login.html'><i class='fa fa-user-circle fa-2x'></i>";
+              } ?>
+            </a>
+        </div>
+        <?php 
+        if (isset($_SESSION['user_email'])) {
+          echo "<div class='nav-item'>
+          <a class='nav-link'  href='./php/logout.php'>logout</a>
+          </div>";
+        }
+        ?>
       </div>
     </div>
   </nav>
