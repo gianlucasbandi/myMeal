@@ -19,7 +19,10 @@
             $result = pg_query_params($dbconn,$query2,
                 array($nome,$cognome,$email,$passwd));
             if ($result) {
-                header("Location: ../login/login.html");
+                session_start();
+                $_SESSION['user_email'] = $email;
+                $_SESSION['name'] = $nome;
+                header("location: ..");
             }
             else {
                 echo "Errore";

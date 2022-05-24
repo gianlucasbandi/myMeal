@@ -47,22 +47,18 @@
             <a class="nav-link" href="./html/articoli.html">Articoli</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./html/esperienze.html">Esperienze</a>
+            <a class="nav-link" href="./html/esperienze.html">Libri</a>
           </li>        
         </ul>
         <div class="nav-item"><a style="color: #1c2149;" class="nav-link" 
             href=<?php
               if (isset($_SESSION['user_email'])) {
-                echo "./php/welcome.php";
+                echo "'./php/welcome.php'><i>Ciao " . $_SESSION['name'];
               } else {
-                echo "'./login/login.html'";
+                echo "'./login/login.html'><i class='fa fa-user-circle fa-2x'>";
               } ?>
-            ><i class="fa fa-user-circle fa-2x"></i></a></div>
-        
-        <form method="GET" action="./html/risultati.html" name="search" class="d-flex">
-          <input class="form-control me-2" placeholder="Cerca" id="search"
-                name="param" type="search" aria-label="Search">
-        </form>
+          </i></a>
+        </div>
       </div>
     </div>
   </nav>
