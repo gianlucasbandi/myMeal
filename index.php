@@ -13,13 +13,14 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="./js/jquery-1.4.2.min.js"></script>
   <title>myMeal</title>
 </head>
 
 <body>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html">
+      <a class="navbar-brand" href="./index.php">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116.661 36" width="116.661" height="36">
           <g fill="#00936f" color="#00936f" transform="translate(0 9.879999999999999) scale(0.2800001)">
             <svg width="100.0" height="58.0" x="0.0" y="0.0" viewBox="0 0 100 58">
@@ -65,6 +66,7 @@
       </div>
     </div>
   </nav>
+
   <div id="carouselHomePage" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselHomePage" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -99,10 +101,10 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <div class="overlay-image" style="background-image: url(./img/coach3.jpg);"></div>
+        <div class="overlay-image" style="background-image: url(./img/art.png);"></div>
         <div class="container-my">
           <div class="carousel-caption d-md-block">
-            <h3>Tieniti informato su tutte le novità e gli aggiornamenti!</h3>
+            <h3>Tutte le curiosità di alimenti, dieta e allenamento a portata di click!</h3>
             <br>
             <button class="mybutton" onclick="window.location.href='./html/articoli.html'">
               Articoli
@@ -123,10 +125,10 @@
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <div class="overlay-image" style="background-image: url(./img/esperienze1.jpg);"></div>
+        <div class="overlay-image" style="background-image: url(./img/spiaggia.jpg);"></div>
         <div class="container-my">
           <div class="carousel-caption d-md-block">
-            <h3>Tante persone hanno raggiunto i loro obiettivi, scopri le loro storie!</h3>
+            <h3>Risveglia il corpo e la mente con le migliori letture per rimanere allenato!</h3>
             <br>
             <button class="mybutton" onclick="window.location.href='./html/esperienze.html'">
               Scopri di più
@@ -144,22 +146,75 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+  <!--PARTE CREA PASTO-->
+
+  <div class="meal">
+   
+    <div class="box">
+        <div style="padding:10%">
+            <h3 style="text-align: center;">Crea Pasto</h3>
+            <ul class="verified-list">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg>  Componi il tuo menù</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg>   Scegli gli alimenti</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg> Guarda le proprietà</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                </svg>  Varia la tua dieta</li>
+            </ul>
+            <button class="mybutton" onclick="window.location.href='./html/creapasto.html'" style="margin-left: 4em; margin-right:1em;">
+                Inizia
+              </button>
+          </div>
+          
+    </div>
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="padding-top:1em; padding-bottom: 1em; 
+      margin-left: 1em; margin-right: 1em;">
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="height: initial;">
+            <img src="./img/1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" style="height: initial;">
+            <img src="./img/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" style="height: initial;">
+            <img src="./img/4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" style="height: initial;">
+            <img src="./img/5.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+    </div>
+    </div>
+ 
+
+
+  <!--PARTE RICETTE-->
   <div class="flexbox flex-md-nowrap flex-wrap">
-    <div class="mybox">
+    <div class="mybox" style="background-color: rgba(223, 186, 186, 0.698); ">
       <div style="padding:20%">
-        <h3>Ricette</h3>
-        <p>Lasciati ispirare da ricette gustose e veloci.</p>
+        <h3 style="color: black;">Ricette</h3>
+        <p style="color: black;">Lasciati ispirare da ricette gustose, veloci e salutari.
+          <button class="mybutton" onclick="window.location.href='./html/ricette.html'" style="margin-top: 1em;">visualizza</button>
+        </p>
       </div>
     </div>
-    <div class="swiper mySwiper" style="margin: 1rem; padding: 2rem; background-color: #faebd7; border-radius: 20px;">
+    <div class="swiper mySwiper" style="margin: 1rem; padding: 2rem; background-color:transparent; border-radius: 20px;">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem; ">
             <img src="./img/pancake.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">ricetta pancake</h5>
-              <p class="card-text">descrizione</p>
-              <a href="./html/ricette/colazione/pancake.html" class="btn btn-outline-dark">Leggi</a>
+              <h5 class="card-title">Pancake</h5>
+              <p class="card-text">Soffici e gustosi, ideali per partire con il piede giusto...Provali!</p>
+              <a href='./html/ricette/colazione/pancake.html' class="new-btn">Leggi</a>
             </div>
           </div>
         </div>
@@ -167,59 +222,170 @@
           <div class="card" style="width: 18rem;">
             <img src="./img/avocadotoast.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">ricetta avocado</h5>
-              <p class="card-text">descrizione</p>
-              <a href="./html/articoli/esercizi.html" class="btn btn-outline-warning">Leggi</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">articolo 3</div>
-        <div class="swiper-slide">articolo 4</div>
-        <div class="swiper-slide">articolo 5</div>
-        <div class="swiper-slide">articolo 6</div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </div>
-  <div class="flexbox flex-md-nowrap flex-wrap">
-    <div class="mybox">
-      <div style="padding:20%">
-        <h3>Ultimi articoli</h3>
-        <p>E' importante rimanere sempre aggiornati con gli ultimi consigli disponibili.</p>
-      </div>
-    </div>
-    <div class="swiper mySwiper" style="margin: 1rem; padding: 2rem; background-color: #faebd7; border-radius: 20px;">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card" style="width: 18rem;">
-            <img src="./img/caffe.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">articolo caffe</h5>
-              <p class="card-text">qualcosa</p>
-              <a href="./html/articoli/caffe.html" class="btn btn-outline-dark">Leggi</a>
+              <h5 class="card-title">Avocado toast</h5>
+              <p class="card-text">Pronti in pochi minuti, salutari e leggeri! Che aspetti?</p>
+              <a href='./html/ricette/colazione/avocadotoast.html' class="new-btn">
+                Leggi
+              </a>
             </div>
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="card" style="width: 18rem;">
-            <img src="./img/esperienze2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">articolo esercizi</h5>
-              <p class="card-text">qualcosa</p>
-              <a href="./html/articoli/esercizi.html" class="btn btn-outline-warning">Leggi</a>
-            </div>
-          </div>
+            <div class="card" style="width: 18rem;">
+                <img src="./img/porridge.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Porridge</h5>
+                  <p class="card-text">Libera la fantasia preparando un ottimo porridge!</p>
+                  <a href='./html/ricette/colazione/porridge.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
         </div>
-        <div class="swiper-slide">articolo 3</div>
-        <div class="swiper-slide">articolo 4</div>
-        <div class="swiper-slide">articolo 5</div>
-        <div class="swiper-slide">articolo 6</div>
+        <div class="swiper-slide">
+            <div class="card" style="width: 18rem;">
+              
+              <img src="./img/riso.png" class="card-img-top" style="width: 100%;" alt="...">
+             
+                <div class="card-body">
+                  <h5 class="card-title">Riso</h5>
+                  <p class="card-text">Pranzo ricco e completo? Prova subito questo primo!</p>
+                  <a href='./html/ricette/pranzo/riso.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/pesto.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pesto</h5>
+                  <p class="card-text">Uno dei classici della nostra tradizione, tra i più amati!</p>
+                  <a href='./html/ricette/pranzo/pesto.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/salad.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Insalatona</h5>
+                  <p class="card-text">Svuotare il frigo e rimanere leggero? E' possibile!</p>
+                  <a href='./html/ricette/pranzo/insalatona.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/pollo.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pollo al limone</h5>
+                  <p class="card-text">Il petto di pollo ti stanca? Provalo in questa versione!</p>
+                  <a href='./html/ricette/cena/pollo.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/zucchine.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Polpette</h5>
+                  <p class="card-text">Esiste un piatto più goloso delle polpette? Non credo...</p>
+                  <a href='./html/ricette/cena/zucchine.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="card" style="width: 18rem;">
+                <img src="./img/zucca.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Vellutata</h5>
+                  <p class="card-text">Da provare in tantissime versioni, ma sempre leggera!</p>
+                  <a href='./html/ricette/cena/zucca.html' class="new-btn">Leggi</a>
+                </div>
+              </div>
+        </div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next" style="color: rgba(223, 186, 186, 0.698);"></div>
+      <div class="swiper-button-prev" style="color: rgba(223, 186, 186, 0.698);" ></div>
     </div>
   </div>
+  <!-- PARTE ARTICOLI -->
+  
+    <div class="homepage-articoli">
+    <h1>Ultimi articoli</h1>
+
+    <div class="cards-art">
+      <div class="card-art-item">
+        <div class="card-art">
+          <img src="./img/alimenti-cacao-sq.png">
+          <div class="card-art-content">
+            <div class="card-art-titolo"><h2>Cioccolato fondente: benefici e controindicazioni</h2></div>
+            <div class="card-art-button"><a href="./html/articoli/alimenti/articolo-cioccolato.html">Leggi</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-art-item">
+        <div class="card-art">
+          <img src="./img/allenamento-cardio-sq.png">
+          <div class="card-art-content">
+            <div class="card-art-titolo"><h2>Perdere peso: cardio o sollevamento pesi?</h2></div>
+            <div class="card-art-button"><a href="./html/articoli/allenamento/articolo-cardio.html">Leggi</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-art-item">
+        <div class="card-art">
+          <img src="./img/dieta-veget-sq.png">
+          <div class="card-art-content">
+            <div class="card-art-titolo"><h2>Come funziona la dieta vegetariana?</h2></div>
+            <div class="card-art-button"><a href="./html/articoli/dieta/articolo-vege.html">Leggi</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-art-item">
+        <div class="card-art">
+          <img src="./img/alimenti-carne-sq.png">
+          <div class="card-art-content">
+            <div class="card-art-titolo"><h2>Qual è la differenza tra carne bianca e rossa?</h2></div>
+            <div class="card-art-button"><a href="./html/articoli/alimenti/articolo-carne.html">Leggi</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!--PARTE LIBRI-->
+  <div class="content">
+    <br>
+    <div class="title"><h4 class="h4">Scopri il piacere della lettura tra le nostre categorie consigliate!</h4></div>
+    <div class="flex-books">
+      <div class="book-category" id="book-category1">
+      <a href="./html/esperienze.html#dieta"><img src="./img/dietaa.jpg" class="img-category"></a>
+      <div class="centered" id="centered1" >
+          DIETA
+      </div>
+    </div>
+    <div class="book-category">
+      <a href="./html/esperienze.html#ricette"><img src="./img/ricette.jpg" class="img-category"></a>
+      <div class="centered" id="centered2">
+          RICETTE 
+        </div>
+    </div>
+    <div class="book-category">
+      <a href="./html/esperienze.html#allenamento"><img src="./img/allenamento.jpg" class="img-category"></a>
+      <div class="centered" id="centered3">
+          ALLENAMENTO 
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+
   <!-- Footer -->
   <footer class="text-center text-lg-start text-white mt-5">
     <!-- Grid container -->
@@ -265,7 +431,7 @@
               <li>
                 <i>
                   <a class="d-flex align-items-center justify-content-center mx-auto"
-                    href="mailto:proietticosimi.99999@studenti.uniroma1.it">
+                    href="mailto:proietticosimi.1887440@studenti.uniroma1.it">
                       proietticosimi.1887440@studenti.uniroma1.it
                   </a>
                 </i>
