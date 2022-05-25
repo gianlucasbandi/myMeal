@@ -16,10 +16,9 @@
   	<title>myMeal</title>
 </head>
 <body>
-	<div class="d-flex justify-content-center mt-3">
-		<h3>Crea il tuo pasto!</h3>
-
-	</div>
+  <div class="d-flex justify-content-center mt-2">
+    <img src="../../img/logo_small.png" style="width: 150px;" id="icon" alt="logo icon">
+  </div>
 	<div class="supercontainer">
 		<div class="containerRow">
 			<div class="box">

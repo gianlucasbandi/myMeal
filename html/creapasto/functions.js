@@ -167,9 +167,9 @@ function generaTabella() {
                         `
         document.querySelector("#nutrienti").innerHTML = nutrienti;
         carboidrati = 0;
-  grassi = 0;
-  proteine = 0;
-  calorie = 0;
+        grassi = 0;
+        proteine = 0;
+        calorie = 0;
       }
       else {
         tabellaContainer.innerHTML = '<p>Nessun alimento inserito</p>';;
