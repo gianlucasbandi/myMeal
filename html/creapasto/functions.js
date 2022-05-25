@@ -173,6 +173,7 @@ function generaTabella() {
       }
       else {
         tabellaContainer.innerHTML = '<p>Nessun alimento inserito</p>';;
+        document.querySelector("#nutrienti").innerHTML = '';
       }
     })
     .catch((error) => {
