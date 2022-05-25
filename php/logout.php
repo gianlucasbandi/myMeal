@@ -5,5 +5,4 @@ if (!isset($_SESSION['user_email'])) {
     session_start();
     session_destroy();
     header("location: ../index.php");
-    exit();
 ?>

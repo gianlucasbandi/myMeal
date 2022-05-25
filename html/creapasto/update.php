@@ -1,7 +1,7 @@
 <?php
 require_once('../../php/config.php');
 session_start();
-if (!isset($_SESSION['user_email'])) {
+if (!isset($_SESSION['user_email']) || !isset($_POST["data"])) {
     header("location: ../../index.php");
 }
 
