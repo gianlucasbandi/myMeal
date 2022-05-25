@@ -85,7 +85,7 @@
           <div class="carousel-caption d-md-block">
             <h3>Crea i tuoi pasti, per un'alimentazione sana!</h3>
             <br>
-            <button class="mybutton" onclick="window.location.href='./html/creapasto.html'">
+            <button class="mybutton" onclick="window.location.href='./html/creapasto/creapasto.php'">
               Crea Pasti
             </button>
           </div>
@@ -121,8 +121,8 @@
           <div class="carousel-caption d-md-block">
             <h3>Segui i consigli di esperti del settore!</h3>
             <br>
-            <button class="mybutton" onclick="window.location.href='./html/articoli.html'">
-              Consigli Esperti
+            <button class="mybutton" onclick="window.location.href='./html/articoli/allenamento.html'">
+              Consigli Allenamento
             </button>
           </div>
         </div>
@@ -171,7 +171,7 @@
                   <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                 </svg>  Varia la tua dieta</li>
             </ul>
-            <button class="mybutton" onclick="window.location.href='./html/creapasto.html'" style="margin-left: 4em; margin-right:1em;">
+            <button class="mybutton" onclick="window.location.href='./html/creapasto/creapasto.php'" style="margin-left: 4em; margin-right:1em;">
                 Inizia
               </button>
           </div>
