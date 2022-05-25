@@ -16,25 +16,26 @@
                 <img src="./logo_small.png" style="width: 30%; margin-top: 5%;" id="icon" alt="logo icon">
             </div>
             <!-- Registration Form -->
-            <form action="./validateRegistration.php" method="POST" name="myForm">
+            <form action="" name="myForm">
                 <div class="container" id="box">
                     <div id="signUp" class="signingUp-form">
-                        <input type="text" name="inputNome" class="fadeIn second"
+                        <input type="text" id="inputNome" name="inputNome" class="fadeIn second"
                             placeholder="Nome" required>
-                        <input type="text" name="inputCognome" class="fadeIn second"
+                        <input type="text" id="inputCognome" name="inputCognome" class="fadeIn second"
                             placeholder="Cognome" required>
-                        <input type="email" name="inputEmail" class="fadeIn third"
+                        <input type="email" id="inputEmail" name="inputEmail" class="fadeIn third"
                             placeholder="Email" required>
-                        <input type="password" name="inputPasswd" class="fadeIn third"
+                        <input type="password" id="inputPasswd" name="inputPasswd" class="fadeIn third"
                             placeholder="Password" required>
-                        <input class="fadeIn fourth mt-4 mb-3" name="registrationButton"
-                            type="submit" value="Registrati"></input>
-                        <hr>
-                        <p class="fadeIn fourth mb-4">Hai già un account? <a href="../login/login.html">Accedi</a></p>
-                        <a href="../index.php" class="fadeIn fourth mb-4">Torna alla Home</a>
                     </div>
                 </div>
             </form>
+            <input type="submit" class="fadeIn fourth mt-4 mb-3"
+                name="registrationButton" id="registrationButton" value="Registrati"></button>
+            <div id="messaggi"></div>
+            <hr>
+            <p class="fadeIn fourth mb-4">Hai già un account? <a href="../login/login.html">Accedi</a></p>
+                        <a href="../index.php" class="fadeIn fourth mb-4">Torna alla Home</a>
         </div>
     <script src="./functions.js"></script>
 </body>
