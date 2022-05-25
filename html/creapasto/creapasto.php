@@ -40,11 +40,11 @@
 						<label for="alimento">Alimento</label>
 						<input type="text" id="alimento" name="alimento" placeholder="Cerca alimento" required autofocus>
 					</div>
+          <div id="messaggi"></div>
 				</form>
 				<div>
 					<button class="button-13" id="nuova-riga">Inserisci Alimento</button>
 				</div>		
-				<div id="messaggi"></div>
 			</div>
 		</div>
 		<div class="containerRow" id="tabella-container"></div>
