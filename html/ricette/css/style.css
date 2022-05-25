@@ -390,7 +390,7 @@ a:hover {
 
 .recipe-container{
   display: grid;
-  grid-template-columns: repeat(minmax(500px, 1fr));
+  grid-template-rows: repeat(minmax(450px, 1fr));
   gap: 2%;
   margin-left: 6%;
   margin-right: 6%;
@@ -427,9 +427,15 @@ a:hover {
 
 .card-writteable {
   position: relative;
- text-align: center;
- color: white;
+  text-align: center;
+  color: white;
+  transition: 0.4;
 }
+
+.card-writteable:hover {
+  transform: translateY(-20px);
+}
+
 .centered {
   position: absolute;
   top: 50%;
