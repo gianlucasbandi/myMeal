@@ -1,8 +1,12 @@
 let inserisciBtn = document.querySelector('#nuova-riga');
 let tabellaContainer = document.querySelector("#tabella-container");
 inserisciBtn.addEventListener('click', inserisciAlimento);
+let carboidrati = 0;
+let grassi = 0;
+let proteine = 0;
+let calorie = 0;
 
-// data di oggi per input data e mostra gli alimenti
+// data di oggi per input data e mostra gli alimenti e azzerra nutrieni e calorie
 $(document).ready(function () {
   var date = new Date();
   var day = date.getDate();
@@ -12,6 +16,10 @@ $(document).ready(function () {
   if (day < 10) day = "0" + day;
   var today = year + "-" + month + "-" + day;
   document.getElementById("data").value = today;
+  carboidrati = 0;
+  grassi = 0;
+  proteine = 0;
+  calorie = 0;
   generaTabella();
 });
 
@@ -50,7 +58,6 @@ function inserisciAlimento() {
           if (data['messaggio'] == "alimento già inserito") {
             document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Alimento già inserito!</p>';
           } else {
-            console.log(data);
             aggiornaTabella();
           }
         }
@@ -105,7 +112,6 @@ function modificaAlimento(e) {
         console.error('Errore: ', error);
       });
   }
-
 }
 
 function aggiornaTabella() {
@@ -126,10 +132,8 @@ function generaTabella() {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       if (data.length > 0) {
         alimenti = data;
-        console.log('Dati ricevuti: ', data);
         let tabella = `
         <table>
           <thead>
@@ -139,11 +143,9 @@ function generaTabella() {
           </thead>
           <tbody>
             ${generaRighe(data)}
-            
           </tbody>
         </table>
         `;
-        //${generaNutrienti(data)}|^|
         tabellaContainer.innerHTML = tabella;
         let deleteBtn = document.querySelectorAll(".elimina-alimento");
         let updateBtn = document.querySelectorAll(".modifica-alimento");
@@ -153,6 +155,21 @@ function generaTabella() {
         for (let i = 0; i < updateBtn.length; i++) {
           updateBtn[i].addEventListener('click', modificaAlimento);
         }
+        let res = generaNutrienti(data);
+        let nutrienti = `<table>
+                        <tr>
+                        <td>Carboidrati: ${res[0].toFixed(2)}</td>
+                        <td>Proteine: ${res[1].toFixed(2)}</td>
+                        <td>Grassi: ${res[2].toFixed(2)}</td>
+                        <td>Calorie: ${res[3].toFixed(2)}</td>
+                        </tr>
+                        </table>
+                        `
+        document.querySelector("#nutrienti").innerHTML = nutrienti;
+        carboidrati = 0;
+  grassi = 0;
+  proteine = 0;
+  calorie = 0;
       }
       else {
         tabellaContainer.innerHTML = '<p>Nessun alimento inserito</p>';;
@@ -177,17 +194,31 @@ function generaIntestazione(alimenti) {
 
 function generaNutrienti(alimenti) {
   if (alimenti == '') {
-    return '<p>Nessun alimento inserito</p>';
+    return 0,0,0,0;
   }
   else {
-    let riga = `
-          <td></td>
-          <td>Carboidrati</td>
-          <td>Proteine</td>
-          <td>Grassi</td>
-          <td>Calorie</td>
-          <td>Grammi</td>`
-    return riga;
+    let tb = document.querySelector('tbody');
+    if(tb!=null){
+      for (let row of tb.rows) {
+        for (let cell of row.cells) {
+          if (!isNaN(cell.textContent)) {
+            if(cell.id=='carboidrati'){
+              carboidrati += parseFloat(cell.textContent);
+            }
+            if(cell.id=='grassi'){
+              grassi += parseFloat(cell.textContent);
+            }
+            if(cell.id=='proteine'){
+              proteine += parseFloat(cell.textContent);
+            }
+            if(cell.id=='calorie'){
+              calorie += parseFloat(cell.textContent);
+            }
+          }
+        }
+      } 
+    }
+    return [carboidrati,proteine,grassi,calorie];
   }
 }
 
@@ -196,11 +227,11 @@ function generaRighe(alimenti) {
   alimenti.forEach(alimento => {
     let riga = `
         <tr>
-          <td>${alimento.nome}</td>
-          <td>${(alimento.carboidrati / 100 * alimento.grammi).toFixed(2)}</td>
-          <td>${(alimento.proteine / 100 * alimento.grammi).toFixed(2)}</td>
-          <td>${(alimento.grassi / 100 * alimento.grammi).toFixed(2)}</td>
-          <td>${(alimento.calorie / 100 * alimento.grammi).toFixed(2)}</td>
+          <td id="nome">${alimento.nome}</td>
+          <td id="carboidrati">${(alimento.carboidrati / 100 * alimento.grammi).toFixed(2)}</td>
+          <td id="proteine">${(alimento.proteine / 100 * alimento.grammi).toFixed(2)}</td>
+          <td id="grassi">${(alimento.grassi / 100 * alimento.grammi).toFixed(2)}</td>
+          <td id="calorie">${(alimento.calorie / 100 * alimento.grammi).toFixed(2)}</td>
           <td>${alimento.grammi}</td>
           <td class="bottoniTabella">
             <input type="text" style="text-align:right;" placeholder="g" data-val="${alimento.nome}" maxlength='5' size='2'>

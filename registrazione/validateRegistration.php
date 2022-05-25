@@ -1,6 +1,6 @@
 <?php
     if (!isset($_POST["registrationButton"])) {
-        header("Location: ../index.html");
+        header("Location: ../index.php");
     }
     else {
         include('../php/config.php');

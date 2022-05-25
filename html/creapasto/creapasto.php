@@ -44,15 +44,15 @@
 				</form>
 				<div>
 					<button class="button-13" id="nuova-riga">Inserisci Alimento</button>
-				</div>
-				
+				</div>		
 				<div id="messaggi"></div>
 			</div>
 		</div>
 		<div class="containerRow" id="tabella-container"></div>
+    <div class='d-flex justify-content-center mt-3' id="nutrienti"></div>
 	</div>
 	<div class="d-flex justify-content-center ">
-	<input class="mt-4 mb-3" id="home"
+	  <input class="mt-4 mb-3" id="home"
 			type="submit" onclick="window.location='../..'" value="Home"></input>
 	</div>
 
@@ -65,7 +65,7 @@
         <!--Grid column-->
         <div class="mb-4 mb-md-0">
           <div class="d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
-            <img src="./img/logo_white_large.png" height="70" />
+            <img src="../../img/logo_white_large.png" height="70" />
           </div>
         </div>
         <!--Grid column-->
@@ -122,8 +122,8 @@
   </footer>
   <!-- Footer -->
 
-  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="./functions.js"></script>

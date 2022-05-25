@@ -63,7 +63,7 @@
         <?php 
         if (isset($_SESSION['user_email'])) {
           echo "<div class='nav-item'>
-          <a class='nav-link'  href='./php/logout.php'>logout</a>
+          <a class='nav-link' style='color:tomato;' href='./php/logout.php'>logout</a>
           </div>";
         }
         ?>
