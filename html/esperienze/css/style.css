@@ -175,7 +175,7 @@ a:hover {
       height: 100%;
       backface-visibility: hidden;
       transform: rotateY(180deg);
-      background-image: linear-gradient(to right, #adcdc1, #bad6d4, #cbdfe2, #dfe8ec, #f0f1f2);
+      background-image: linear-gradient(to right, #ccf3e1, #d6f6e4, #dff8e8, #e8fbec, #f0fef1); /*linear-gradient(to right, #adcdc1, #bad6d4, #cbdfe2, #dfe8ec, #f0f1f2);*/
       border: 1px solid rgb(88, 88, 88);
   }
   
@@ -239,6 +239,9 @@ a:hover {
 .card {
   flex: 1 1 400px;
   margin-bottom: 2em;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(168, 168, 175, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(168, 168, 175, 1);
+  box-shadow: 8px 8px 24px 0px rgba(168, 168, 175, 1);
 }
 
 .go-author{
