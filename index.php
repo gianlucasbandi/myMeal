@@ -51,19 +51,18 @@
           </li>        
         </ul>
         <div class="nav-item">
-          <a style="color: #1c2149;" class="nav-link" 
+          <a style="color: #1c2149;" class="nav-link saluto" 
             <?php
               if (isset($_SESSION['user_email'])) {
-                echo "<i>Ciao " . $_SESSION['name'] . "</i>";
+                echo "<i>Ciao " . $_SESSION['name'] . "</i></a>";
               } else {
-                echo "<a href='./login/login.html'><i class='fa fa-user-circle fa-2x'></i>";
+                echo "<a href='./login/login.html'><i class='fa fa-user-circle fa-2x'></i></a>";
               } ?>
-            </a>
         </div>
         <?php 
         if (isset($_SESSION['user_email'])) {
           echo "<div class='nav-item'>
-          <a class='nav-link' style='color:tomato;' href='./php/logout.php'>logout</a>
+          <a class='nav-link' style='color:orangered;' href='./php/logout.php'>logout</a>
           </div>";
         }
         ?>

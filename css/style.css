@@ -528,3 +528,7 @@ parte sui libri
 }
 
 /* buon colore rgba(223, 186, 186, 0.698)  rgb(125, 180, 143); */
+
+.saluto:hover {
+  cursor: pointer;
+}
