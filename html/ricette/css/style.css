@@ -22,7 +22,6 @@ a:hover {
   color: #f5f5f5 !important;
 }
 .logo-part {
-
   height: 100%;
   text-align: center;
 }
@@ -211,11 +210,6 @@ a:hover {
   .flex-container {
     flex-direction: column;
   }
-}
-
-.container {
-  display: flex; 
-  justify-content: center;
 }
 
 
