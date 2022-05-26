@@ -45,6 +45,7 @@ function valida() {
                             messaggi.innerHTML = '<p style="color:red;">email già presente</p>';
                         }
                         else {
+                            // success
                             window.location.replace('../index.php');
                         }
                     })
