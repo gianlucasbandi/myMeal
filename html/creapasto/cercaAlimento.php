@@ -1,4 +1,5 @@
 <?php
+
 require_once('../../php/config.php');
 session_start();
 if (!isset($_SESSION['user_email']) || !isset($_GET["term"])) {
@@ -14,6 +15,6 @@ if (!isset($_SESSION['user_email']) || !isset($_GET["term"])) {
     } else {
         $res = array();
     }
-    //return json res
     echo json_encode($res);
+    
 ?>

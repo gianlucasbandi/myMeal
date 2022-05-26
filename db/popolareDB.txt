@@ -204,22 +204,3 @@ INSERT INTO alimento VALUES('ZUCCA GIALLA','100','3.5','1.1','0.1','18');
 INSERT INTO alimento VALUES('ZUCCHERO (Saccarosio)','100','104.5','0','0','392');
 INSERT INTO alimento VALUES('ZUCCHERO DI CANNA, GREZZO','100','101.3','0.1','0','362');
 INSERT INTO alimento VALUES('ZUCCHINE','100','1.4','1.3','0.1','11');
-
-  $dbfile = fopen("dbfile.txt",'w');
-  fwrite($dbfile,$line);
-  $open = fopen("table.csv",'r');
-  while (($data = fgetcsv($open,1000,";")) !== FALSE ) {
-    if ($data[0]!='Alimento' && $data[0]!='') {
-      $nome = trim($data[0]);
-      $nome = str_replace("'", '', $nome);
-      $cal = str_replace(",", '.', $data[1]);
-      $prot = str_replace(",", '.', $data[2]);
-      $carb = str_replace(",", '.', $data[3]);
-      $grassi = str_replace(",", '.', $data[4]);
-      $line = "INSERT INTO alimento VALUES('$nome','100','$carb','$prot','$grassi','$cal')" . ";" . PHP_EOL;
-      fwrite($dbfile,$line);
-    }
-
-  }
-  fclose($open);
-  fclose($dbfile);

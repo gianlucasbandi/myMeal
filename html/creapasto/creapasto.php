@@ -30,7 +30,7 @@
 					<div class="m-2">
 						<label for="tipo">Pasto</label>
 						<select name="tipo" id="tipo" required>
-							<option value="colazione">Colazione</option>
+							<option value="colazione" selected>Colazione</option>
 							<option value="pranzo">Pranzo</option>
 							<option value="cena">Cena</option>
 							<option value="spuntino">Spuntino</option>

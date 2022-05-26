@@ -1,0 +1,19 @@
+TRADUZIONE DIRETTA
+
+Alimento(nome, peso, carboidrati, grassi, proteine, calorie)
+Utente(codice)
+Menu(utente, giorno, mese, anno)
+	chiave: giorno, mese, anno
+	f.k. : Menu[utente] c Utente[codice]	
+	inclusion : Menu[utente] c Pasto[composto_menu] 
+Pasto(tipo, menu_utente, menu_giorno, menu_mese, menu_anno)
+	f.k. : Pasto[menu_utente] c Menu[utente]
+	f.k. : Pasto[menu_giorno] c Menu[giorno]
+f.k. : Pasto[menu_mese] c Menu[mese]
+f.k. : Pasto[menu_anno] c Menu[anno]
+Formato(alimento_nome, pasto_tipo, pasto_menu_utente, pasto_menu_giorno,
+pasto_menu_mese, pasto_menu_anno) 
+	f.k. : Formato[alimento_nome] c Alimento[nome]
+	f.k. : Formato[pasto_tipo,pasto_menu_utente, pasto_menu_giorno, 
+pasto_menu_mese, pasto_menu_anno] c Pasto[tipo,menu_utente, menu_giorno
+menu_mese, menu_anno] 

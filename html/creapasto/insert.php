@@ -199,3 +199,5 @@ if ($result = pg_query_params($dbconn, $queryalimento, array($alimento))) {
 } else {
     echo "Errore nell'esecuzione di $queryalimento" . pg_last_error();
 }
+
+?>

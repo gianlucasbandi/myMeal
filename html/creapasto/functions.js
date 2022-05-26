@@ -1,12 +1,17 @@
+// button inserisci alimento 
 let inserisciBtn = document.querySelector('#nuova-riga');
-let tabellaContainer = document.querySelector("#tabella-container");
 inserisciBtn.addEventListener('click', inserisciAlimento);
-let carboidrati = 0;
-let grassi = 0;
-let proteine = 0;
-let calorie = 0;
 
-// data di oggi per input data e mostra gli alimenti e azzerra nutrieni e calorie
+// zona per inserire tabella
+let tabellaContainer = document.querySelector("#tabella-container");
+
+// contatori nutrienti e calorie
+let carboidrati;
+let grassi;
+let proteine;
+let calorie;
+
+// mostra tabella alimenti di oggi quando si accede
 $(document).ready(function () {
   var date = new Date();
   var day = date.getDate();
@@ -36,9 +41,13 @@ document.querySelector("#data").addEventListener('change', aggiornaTabella);
 // aggiorna tabella al cambio pasto
 document.querySelector("#tipo").addEventListener('change', aggiornaTabella);
 
+// inserisce alimento
 function inserisciAlimento() {
+
   if (document.querySelector('#alimento').value == '') {
-    document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Seleziona un alimento da inserire!</p>';
+    // nessun alimento inserito
+    document.querySelector('#messaggi').innerHTML =
+      '<p style="color:red;">Seleziona un alimento da inserire!</p>';
   }
   else {
     document.querySelector('#messaggi').innerHTML = '';
@@ -53,11 +62,16 @@ function inserisciAlimento() {
       .then(response => response.json())
       .then(data => {
         if (data['messaggio'] == "Alimento non presente nel database") {
-          document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Seleziona un alimento tra quelli presenti!</p>';
+          // alimento non presente nel db
+          document.querySelector('#messaggi').innerHTML =
+            '<p style="color:red;">Seleziona un alimento tra quelli presenti!</p>';
         } else {
           if (data['messaggio'] == "alimento già inserito") {
-            document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Alimento già inserito!</p>';
+            // alimento già inserito
+            document.querySelector('#messaggi').innerHTML =
+              '<p style="color:red;">Alimento già inserito!</p>';
           } else {
+            // success
             aggiornaTabella();
           }
         }
@@ -70,7 +84,7 @@ function inserisciAlimento() {
 
 function eliminaAlimento(e) {
   let data = new FormData(document.querySelector('#form'));
-  data.append('data-val', e.target.getAttribute('data-val'));
+  data.append('data-val', e.target.getAttribute('data-val')); // aggiunge l'alimento da eliminare al body
   fetch('./delete.php', {
     method: 'POST',
     header: {
@@ -80,6 +94,7 @@ function eliminaAlimento(e) {
   })
     .then(response => response.json())
     .then(data => {
+      // success
       aggiornaTabella();
     })
     .catch((error) => {
@@ -88,10 +103,11 @@ function eliminaAlimento(e) {
 }
 
 function modificaAlimento(e) {
-  let id = e.target.getAttribute('data-val');
-  let gr = document.querySelector(`[data-val='${id}']`).value;
+  let id = e.target.getAttribute('data-val'); // alimento da modificare
+  let gr = document.querySelector(`[data-val='${id}']`).value; // grammi scelti da inserire
   if (gr == '') {
-    document.querySelector('#messaggi').innerHTML = '<p style="color:red;">Inserisci i grammi!</p>';
+    document.querySelector('#messaggi').innerHTML =
+      '<p style="color:red;">Inserisci i grammi!</p>';
   }
   else {
     let data = new FormData(document.querySelector('#form'));
@@ -115,7 +131,7 @@ function modificaAlimento(e) {
 }
 
 function aggiornaTabella() {
-  tabellaContainer.innerHTML = "";
+  tabellaContainer.innerHTML = ""; // azzera tabella presente
   generaTabella();
 }
 
@@ -133,6 +149,7 @@ function generaTabella() {
     .then(response => response.json())
     .then(data => {
       if (data.length > 0) {
+        // se nel db sono presenti alimenti per quei parametri (data,pasto,utente)
         alimenti = data;
         let tabella = `
         <table>
@@ -146,12 +163,14 @@ function generaTabella() {
           </tbody>
         </table>
         `;
-        tabellaContainer.innerHTML = tabella;
-        let deleteBtn = document.querySelectorAll(".elimina-alimento");
-        let updateBtn = document.querySelectorAll(".modifica-alimento");
+        tabellaContainer.innerHTML = tabella; // inserisce tabella generata nella zona tabella-container
+        let deleteBtn = document.querySelectorAll(".elimina-alimento"); // tutti i bottoni elimina
+        let updateBtn = document.querySelectorAll(".modifica-alimento"); // tutti i bottoni modifica
+        // aggiunge event listener a tutti i bottoni elimina
         for (let i = 0; i < deleteBtn.length; i++) {
           deleteBtn[i].addEventListener('click', eliminaAlimento);
         }
+        // aggiunge event listener a tutti i bottoni modifica
         for (let i = 0; i < updateBtn.length; i++) {
           updateBtn[i].addEventListener('click', modificaAlimento);
         }
@@ -194,38 +213,36 @@ function generaIntestazione(alimenti) {
 }
 
 function generaNutrienti(alimenti) {
-  if (alimenti == '') {
-    return 0,0,0,0;
-  }
-  else {
-    let tb = document.querySelector('tbody');
-    if(tb!=null){
-      for (let row of tb.rows) {
-        for (let cell of row.cells) {
-          if (!isNaN(cell.textContent)) {
-            if(cell.id=='carboidrati'){
-              carboidrati += parseFloat(cell.textContent);
-            }
-            if(cell.id=='grassi'){
-              grassi += parseFloat(cell.textContent);
-            }
-            if(cell.id=='proteine'){
-              proteine += parseFloat(cell.textContent);
-            }
-            if(cell.id=='calorie'){
-              calorie += parseFloat(cell.textContent);
-            }
+  let tb = document.querySelector('tbody'); // body tabella generata
+  if (tb != null) {
+    // tabella non vuota
+    for (let row of tb.rows) { // per ogni riga della tabella
+      for (let cell of row.cells) { // per ogni cella della riga
+        let text = cell.textContent;
+        if (!isNaN(text)) {
+          // contenuto della cella è un numero
+          if (cell.id == 'carboidrati') {
+            carboidrati += parseFloat(text);
+          }
+          if (cell.id == 'grassi') {
+            grassi += parseFloat(text);
+          }
+          if (cell.id == 'proteine') {
+            proteine += parseFloat(text);
+          }
+          if (cell.id == 'calorie') {
+            calorie += parseFloat(text);
           }
         }
-      } 
+      }
     }
-    return [carboidrati,proteine,grassi,calorie];
   }
+  return [carboidrati, proteine, grassi, calorie];
 }
 
 function generaRighe(alimenti) {
   let righe = '';
-  alimenti.forEach(alimento => {
+  alimenti.forEach(alimento => { // una riga per ogni alimento
     let riga = `
         <tr>
           <td id="nome">${alimento.nome}</td>
