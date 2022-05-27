@@ -1,15 +1,15 @@
 // button inserisci alimento 
-let inserisciBtn = document.querySelector('#nuova-riga');
-inserisciBtn.addEventListener('click', inserisciAlimento);
+$('#nuova-riga').on('click', inserisciAlimento);
 
 // zona per inserire tabella
-let tabellaContainer = document.querySelector("#tabella-container");
+let tabellaContainer;
 
 // contatori nutrienti e calorie
 let carboidrati;
 let grassi;
 let proteine;
 let calorie;
+let messaggi;
 
 // mostra tabella alimenti di oggi quando si accede
 $(document).ready(function () {
@@ -25,6 +25,8 @@ $(document).ready(function () {
   grassi = 0;
   proteine = 0;
   calorie = 0;
+  tabellaContainer = document.querySelector("#tabella-container");
+  messaggi = document.querySelector('#messaggi');
   generaTabella();
 });
 
@@ -36,21 +38,20 @@ $(function () {
 });
 
 // aggiorna tabella al cambio data
-document.querySelector("#data").addEventListener('change', aggiornaTabella);
+$('#data').on('change', aggiornaTabella);
 
 // aggiorna tabella al cambio pasto
-document.querySelector("#tipo").addEventListener('change', aggiornaTabella);
+$('#tipo').on('change', aggiornaTabella);
 
 // inserisce alimento
 function inserisciAlimento() {
 
   if (document.querySelector('#alimento').value == '') {
     // nessun alimento inserito
-    document.querySelector('#messaggi').innerHTML =
-      '<p style="color:red;">Seleziona un alimento da inserire!</p>';
+    messaggi.innerHTML = '<p style="color:red;">Seleziona un alimento da inserire!</p>';
   }
   else {
-    document.querySelector('#messaggi').innerHTML = '';
+    messaggi.innerHTML = '';
     let formdata = new FormData(document.querySelector('#form'));
     fetch('./php/insert.php', {
       method: 'POST',
@@ -63,13 +64,11 @@ function inserisciAlimento() {
       .then(data => {
         if (data['messaggio'] == "Alimento non presente nel database") {
           // alimento non presente nel db
-          document.querySelector('#messaggi').innerHTML =
-            '<p style="color:red;">Seleziona un alimento tra quelli presenti!</p>';
+          messaggi.innerHTML = '<p style="color:red;">Seleziona un alimento tra quelli presenti!</p>';
         } else {
           if (data['messaggio'] == "alimento già inserito") {
             // alimento già inserito
-            document.querySelector('#messaggi').innerHTML =
-              '<p style="color:red;">Alimento già inserito!</p>';
+            messaggi.innerHTML = '<p style="color:red;">Alimento già inserito!</p>';
           } else {
             // success
             aggiornaTabella();
@@ -106,8 +105,7 @@ function modificaAlimento(e) {
   let id = e.target.getAttribute('data-val'); // alimento da modificare
   let gr = document.querySelector(`[data-val='${id}']`).value; // grammi scelti da inserire
   if (gr == '') {
-    document.querySelector('#messaggi').innerHTML =
-      '<p style="color:red;">Inserisci i grammi!</p>';
+    messaggi.innerHTML = '<p style="color:red;">Inserisci i grammi!</p>';
   }
   else {
     let data = new FormData(document.querySelector('#form'));

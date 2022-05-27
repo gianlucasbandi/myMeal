@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
     <link rel="icon" type="image/x-icon" href="../../img/logo-tiny.ico">
     <link rel="stylesheet" href="./css/style.css">
-  	<title>myMeal</title>
+  	<title>Crea Pasto</title>
 </head>
 <body>
   <div class="d-flex justify-content-center mt-2">
