@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="icon" type="image/x-icon" href="./img/logo-tiny.ico">
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>myMeal</title>
 </head>
 
@@ -47,26 +47,25 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./html/esperienze.html">Libri</a>
-          </li>        
+          </li>
         </ul>
         <div class="nav-item">
           <a style="color: #1c2149;" class="nav-link saluto" 
             <?php
-              if (isset($_SESSION['user_email'])) {
-                echo "<i>Ciao " . $_SESSION['name'] . "</i></a>";
-              } else {
-                echo "<a href='./login/login.html'><i class='fa fa-user-circle fa-2x'></i></a>";
-              } ?>
+            if (isset($_SESSION['user_email'])) {
+              echo "<i>Ciao " . $_SESSION['name'] . "</i></a>";
+            } else {
+              echo "<a href='./login/login.html'><i class='fa fa-user-circle fa-2x'></i></a>";
+            } ?>
         </div>
-        <?php 
-        if (isset($_SESSION['user_email'])) {
-          echo "<div class='nav-item'>
-          <a class='nav-link' style='color:orangered;' href='./php/logout.php'>logout</a>
-          </div>";
-        }
+        <?php
+          if (isset($_SESSION['user_email'])) {
+            echo "<div class='nav-item'>
+              <a class='nav-link' style='color:orangered;' href='./php/logout.php'>logout</a>
+              </div>";
+          }
         ?>
       </div>
-    </div>
   </nav>
 
   <div id="carouselHomePage" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -152,50 +151,50 @@
   <!--PARTE CREA PASTO-->
 
   <div class="meal">
-   
+
     <div class="box">
-        <div style="padding:10%">
-            <h3 style="text-align: center;">Crea Pasto</h3>
-            <ul class="verified-list">
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                </svg>  Componi il tuo menù</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                </svg>   Scegli gli alimenti</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                </svg> Guarda le proprietà</li>
-                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-                  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                </svg>  Varia la tua dieta</li>
-            </ul>
-            <button class="mybutton" onclick="window.location.href='./html/creapasto/creapasto.php'" style="margin-left: 4em; margin-right:1em;">
-                Inizia
-              </button>
-          </div>
-          
+      <div style="padding:10%">
+        <h3 style="text-align: center;">Crea Pasto</h3>
+        <ul class="verified-list">
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </svg> Componi il tuo menù</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </svg> Scegli gli alimenti</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </svg> Guarda le proprietà</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </svg> Varia la tua dieta</li>
+        </ul>
+        <button class="mybutton" onclick="window.location.href='./html/creapasto/creapasto.php'" style="margin-left: 4em; margin-right:1em;">
+          Inizia
+        </button>
+      </div>
+
     </div>
-    
+
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" style="padding-top:1em; padding-bottom: 1em; 
       margin-left: 1em; margin-right: 1em;">
-        <div class="carousel-inner">
-          <div class="carousel-item active" style="height: initial;">
-            <img src="./img/1.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" style="height: initial;">
-            <img src="./img/2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" style="height: initial;">
-            <img src="./img/4.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" style="height: initial;">
-            <img src="./img/5.jpg" class="d-block w-100" alt="...">
-          </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="height: initial;">
+          <img src="./img/1.jpg" class="d-block w-100" alt="...">
         </div>
+        <div class="carousel-item" style="height: initial;">
+          <img src="./img/2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" style="height: initial;">
+          <img src="./img/4.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" style="height: initial;">
+          <img src="./img/5.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
     </div>
-    </div>
- 
+  </div>
+
 
 
   <!--PARTE RICETTE-->
@@ -233,85 +232,85 @@
           </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-                <img src="./img/porridge.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Porridge</h5>
-                  <p class="card-text">Libera la fantasia preparando un ottimo porridge!</p>
-                  <a href='./html/ricette/colazione/porridge.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/porridge.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Porridge</h5>
+              <p class="card-text">Libera la fantasia preparando un ottimo porridge!</p>
+              <a href='./html/ricette/colazione/porridge.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-              
-              <img src="./img/riso.png" class="card-img-top" style="width: 100%;" alt="...">
-             
-                <div class="card-body">
-                  <h5 class="card-title">Riso</h5>
-                  <p class="card-text">Pranzo ricco e completo? Prova subito questo primo!</p>
-                  <a href='./html/ricette/pranzo/riso.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+
+            <img src="./img/riso.png" class="card-img-top" style="width: 100%;" alt="...">
+
+            <div class="card-body">
+              <h5 class="card-title">Riso</h5>
+              <p class="card-text">Pranzo ricco e completo? Prova subito questo primo!</p>
+              <a href='./html/ricette/pranzo/riso.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-                <img src="./img/pesto.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Pesto</h5>
-                  <p class="card-text">Uno dei classici della nostra tradizione, tra i più amati!</p>
-                  <a href='./html/ricette/pranzo/pesto.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/pesto.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Pesto</h5>
+              <p class="card-text">Uno dei classici della nostra tradizione, tra i più amati!</p>
+              <a href='./html/ricette/pranzo/pesto.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-                <img src="./img/salad.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Insalatona</h5>
-                  <p class="card-text">Svuotare il frigo e rimanere leggero? E' possibile!</p>
-                  <a href='./html/ricette/pranzo/insalatona.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/salad.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Insalatona</h5>
+              <p class="card-text">Svuotare il frigo e rimanere leggero? E' possibile!</p>
+              <a href='./html/ricette/pranzo/insalatona.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-                <img src="./img/pollo.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Pollo al limone</h5>
-                  <p class="card-text">Il petto di pollo ti stanca? Provalo in questa versione!</p>
-                  <a href='./html/ricette/cena/pollo.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/pollo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Pollo al limone</h5>
+              <p class="card-text">Il petto di pollo ti stanca? Provalo in questa versione!</p>
+              <a href='./html/ricette/cena/pollo.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-                <img src="./img/zucchine.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Polpette</h5>
-                  <p class="card-text">Esiste un piatto più goloso delle polpette? Non credo...</p>
-                  <a href='./html/ricette/cena/zucchine.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/zucchine.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Polpette</h5>
+              <p class="card-text">Esiste un piatto più goloso delle polpette? Non credo...</p>
+              <a href='./html/ricette/cena/zucchine.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
         <div class="swiper-slide">
-            <div class="card" style="width: 18rem;">
-                <img src="./img/zucca.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Vellutata</h5>
-                  <p class="card-text">Da provare in tantissime versioni, ma sempre leggera!</p>
-                  <a href='./html/ricette/cena/zucca.html' class="new-btn">Leggi</a>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./img/zucca.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Vellutata</h5>
+              <p class="card-text">Da provare in tantissime versioni, ma sempre leggera!</p>
+              <a href='./html/ricette/cena/zucca.html' class="new-btn">Leggi</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="swiper-button-next" style="color: rgba(223, 186, 186, 0.698);"></div>
-      <div class="swiper-button-prev" style="color: rgba(223, 186, 186, 0.698);" ></div>
+      <div class="swiper-button-prev" style="color: rgba(223, 186, 186, 0.698);"></div>
     </div>
   </div>
   <!-- PARTE ARTICOLI -->
-  
-    <div class="homepage-articoli">
+
+  <div class="homepage-articoli">
     <h1>Ultimi articoli</h1>
 
     <div class="cards-art">
@@ -319,7 +318,9 @@
         <div class="card-art">
           <img src="./img/alimenti-cacao-sq.png">
           <div class="card-art-content">
-            <div class="card-art-titolo"><h2>Cioccolato fondente: benefici e controindicazioni</h2></div>
+            <div class="card-art-titolo">
+              <h2>Cioccolato fondente: benefici e controindicazioni</h2>
+            </div>
             <div class="card-art-button"><a href="./html/articoli/alimenti/articolo-cioccolato.html">Leggi</a></div>
           </div>
         </div>
@@ -329,7 +330,9 @@
         <div class="card-art">
           <img src="./img/allenamento-cardio-sq.png">
           <div class="card-art-content">
-            <div class="card-art-titolo"><h2>Perdere peso: cardio o sollevamento pesi?</h2></div>
+            <div class="card-art-titolo">
+              <h2>Perdere peso: cardio o sollevamento pesi?</h2>
+            </div>
             <div class="card-art-button"><a href="./html/articoli/allenamento/articolo-cardio.html">Leggi</a></div>
           </div>
         </div>
@@ -339,7 +342,9 @@
         <div class="card-art">
           <img src="./img/dieta-veget-sq.png">
           <div class="card-art-content">
-            <div class="card-art-titolo"><h2>Come funziona la dieta vegetariana?</h2></div>
+            <div class="card-art-titolo">
+              <h2>Come funziona la dieta vegetariana?</h2>
+            </div>
             <div class="card-art-button"><a href="./html/articoli/dieta/articolo-vege.html">Leggi</a></div>
           </div>
         </div>
@@ -349,7 +354,9 @@
         <div class="card-art">
           <img src="./img/alimenti-carne-sq.png">
           <div class="card-art-content">
-            <div class="card-art-titolo"><h2>Qual è la differenza tra carne bianca e rossa?</h2></div>
+            <div class="card-art-titolo">
+              <h2>Qual è la differenza tra carne bianca e rossa?</h2>
+            </div>
             <div class="card-art-button"><a href="./html/articoli/alimenti/articolo-carne.html">Leggi</a></div>
           </div>
         </div>
@@ -363,29 +370,31 @@
   <!--PARTE LIBRI-->
   <div class="content">
     <br>
-    <div class="title"><h4 class="h4">Scopri il piacere della lettura tra le nostre categorie consigliate!</h4></div>
+    <div class="title">
+      <h4 class="h4">Scopri il piacere della lettura tra le nostre categorie consigliate!</h4>
+    </div>
     <div class="flex-books">
       <div class="book-category" id="book-category1">
-      <a href="./html/esperienze.html#dieta"><img src="./img/dietaa.jpg" class="img-category"></a>
-      <div class="centered" id="centered1" >
+        <a href="./html/esperienze.html#dieta"><img src="./img/dietaa.jpg" class="img-category"></a>
+        <div class="centered" id="centered1">
           DIETA
-      </div>
-    </div>
-    <div class="book-category">
-      <a href="./html/esperienze.html#ricette"><img src="./img/ricette.jpg" class="img-category"></a>
-      <div class="centered" id="centered2">
-          RICETTE 
         </div>
-    </div>
-    <div class="book-category">
-      <a href="./html/esperienze.html#allenamento"><img src="./img/allenamento.jpg" class="img-category"></a>
-      <div class="centered" id="centered3">
-          ALLENAMENTO 
+      </div>
+      <div class="book-category">
+        <a href="./html/esperienze.html#ricette"><img src="./img/ricette.jpg" class="img-category"></a>
+        <div class="centered" id="centered2">
+          RICETTE
+        </div>
+      </div>
+      <div class="book-category">
+        <a href="./html/esperienze.html#allenamento"><img src="./img/allenamento.jpg" class="img-category"></a>
+        <div class="centered" id="centered3">
+          ALLENAMENTO
+        </div>
       </div>
     </div>
+    <br>
   </div>
-  <br>
-</div>
 
 
   <!-- Footer -->
@@ -418,9 +427,8 @@
             <ul class="list-unstyled">
               <li>
                 <i>
-                  <a class="d-flex align-items-center justify-content-center mx-auto"
-                    href="mailto:pontiggia.1892079@studenti.uniroma1.it">
-                      pontiggia.1892079@studenti.uniroma1.it
+                  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:pontiggia.1892079@studenti.uniroma1.it">
+                    pontiggia.1892079@studenti.uniroma1.it
                   </a>
                 </i>
               </li>
@@ -432,9 +440,8 @@
             <ul class="list-unstyled">
               <li>
                 <i>
-                  <a class="d-flex align-items-center justify-content-center mx-auto"
-                    href="mailto:proietticosimi.1887440@studenti.uniroma1.it">
-                      proietticosimi.1887440@studenti.uniroma1.it
+                  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:proietticosimi.1887440@studenti.uniroma1.it">
+                    proietticosimi.1887440@studenti.uniroma1.it
                   </a>
                 </i>
               </li>
