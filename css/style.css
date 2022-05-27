@@ -474,17 +474,17 @@ parte sui libri
 .book-category {
   flex: 1 1 450px;
   position: relative;
-  width: 80%;
+  width: 400px;
+  max-width: 400px;
+  min-width: 250px;
   color: white;
   text-align: center;
 }
 
-
-
 .img-category {
   width: 100%;
   max-width: 400px;
-  min-width: 300px;
+  min-width: auto;
   min-height: 300px;
   max-height: 300px;
   margin-top: 2em;
