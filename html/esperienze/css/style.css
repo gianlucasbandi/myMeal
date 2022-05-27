@@ -17,8 +17,10 @@ footer p, a {
   font-family:  "Poppins", sans-serif;
   text-align: center;
 }
+
 footer a {
   color:#212529;
+  text-decoration: none;
 }
 
 a:hover {

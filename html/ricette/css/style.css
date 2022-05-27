@@ -16,6 +16,7 @@ footer p, a {
 }
 footer a {
   color:#212529;
+  text-decoration: none;
 }
 a:hover {
   text-decoration: none;
