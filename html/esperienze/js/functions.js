@@ -62,3 +62,8 @@ var swiper = new Swiper(".mySwiper", {
 /*
 jquery per testo animato
 */
+
+$(document).ready(function(){
+  $(".div1").animate({opacity: 1,}, 1000, 'swing');
+  $(".btn-j").animate({opacity: 1,}, 1000, 'linear');
+});
