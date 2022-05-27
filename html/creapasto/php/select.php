@@ -22,7 +22,8 @@ $query = "SELECT nome,alimento_grammi,carboidrati,proteine,grassi,calorie
                 pasto_menu_giorno=$2 AND pasto_menu_mese=$3 AND
                 pasto_menu_anno=$4 AND pasto_tipo=$5";
 
-if ($result = pg_query_params($dbconn, $query, array($email, $giorno, $mese, $anno, $tipo))) {
+if ($result = pg_query_params($dbconn, $query,
+      array($email, $giorno, $mese, $anno, $tipo))) {
   $data = [];
   while ($tupla = pg_fetch_array($result, null, PGSQL_ASSOC)) {
     $tmp;

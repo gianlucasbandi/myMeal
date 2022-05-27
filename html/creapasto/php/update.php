@@ -19,7 +19,8 @@ $query = "UPDATE formato SET alimento_grammi = $1 WHERE alimento_nome=$2 AND pas
           AND pasto_menu_utente=$4 AND pasto_menu_giorno=$5 AND pasto_menu_mese=$6
           AND pasto_menu_anno=$7";
 
-if ($result = pg_query_params($dbconn, $query, array($grammi, $alimento, $tipo, $email, $giorno, $mese, $anno))) {
+if ($result = pg_query_params($dbconn, $query,
+        array($grammi, $alimento, $tipo, $email, $giorno, $mese, $anno))) {
     $data = ["messaggio" => "Riga aggiornata con successo"];
     echo json_encode($data);
 } else {

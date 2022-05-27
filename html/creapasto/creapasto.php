@@ -10,7 +10,9 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
     <link rel="icon" type="image/x-icon" href="../../img/logo-tiny.ico">
     <link rel="stylesheet" href="./css/style.css">
@@ -39,7 +41,8 @@
 					</div>
 					<div class="m-2">
 						<label for="alimento">Alimento</label>
-						<input type="text" id="alimento" name="alimento" placeholder="Cerca alimento" required autofocus>
+						<input type="text" id="alimento" name="alimento"
+              placeholder="Cerca alimento" required autofocus>
 					</div>
           <div id="messaggi"></div>
 				</form>
@@ -64,7 +67,8 @@
       <div class="row my-3">
         <!--Grid column-->
         <div class="mb-4 mb-md-0">
-          <div class="d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
+          <div class="d-flex align-items-center justify-content-center mx-auto"
+            style="width: 150px; height: 150px;">
             <img src="../../img/logo_white_large.png" height="70" />
           </div>
         </div>
@@ -75,7 +79,10 @@
             <ul class="list-unstyled">
               <li>
                 <i>
-                  <a class="d-flex align-items-center justify-content-center mx-auto" href="mailto:sbandi.1792041@studenti.uniroma1.it">sbandi.1792041@studenti.uniroma1.it</a>
+                  <a class="d-flex align-items-center justify-content-center mx-auto"
+                    href="mailto:sbandi.1792041@studenti.uniroma1.it">
+                      sbandi.1792041@studenti.uniroma1.it
+                  </a>
                 </i>
               </li>
             </ul>
@@ -122,8 +129,12 @@
   </footer>
   <!-- Footer -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="./js/functions.js"></script>
 </body>
