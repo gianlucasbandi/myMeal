@@ -52,3 +52,48 @@ $(document).ready(function(){
     });
 });
 
+function readingTime() {
+    const paroleMin = 250;
+    const text = document.getElementById("articoli").innerText;
+    const arr = text.trim();
+    const words = arr.split(/\s+/).length;
+    const time = Math.ceil(words / paroleMin);
+    document.getElementById("time").innerText = time;
+    }
+
+$(document).ready(function(){
+    readingTime();
+});
+
+let swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            slidesPerGroup: 2,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+            slidesPerGroup: 1,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+            slidesPerGroup: 1,
+        },
+    },
+});
+
