@@ -31,7 +31,7 @@ $(document).ready(function () {
 // ricerca suggerimenti alimenti su db 
 $(function () {
   $("#alimento").autocomplete({
-    source: 'cercaAlimento.php',
+    source: './php/cercaAlimento.php',
   });
 });
 
@@ -52,7 +52,7 @@ function inserisciAlimento() {
   else {
     document.querySelector('#messaggi').innerHTML = '';
     let formdata = new FormData(document.querySelector('#form'));
-    fetch('./insert.php', {
+    fetch('./php/insert.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ function inserisciAlimento() {
 function eliminaAlimento(e) {
   let data = new FormData(document.querySelector('#form'));
   data.append('data-val', e.target.getAttribute('data-val')); // aggiunge l'alimento da eliminare al body
-  fetch('./delete.php', {
+  fetch('./php/delete.php', {
     method: 'POST',
     header: {
       'Content-Type': 'application/json'
@@ -113,7 +113,7 @@ function modificaAlimento(e) {
     let data = new FormData(document.querySelector('#form'));
     data.append('peso', gr);
     data.append('cibo', id);
-    fetch('./update.php', {
+    fetch('./php/update.php', {
       method: 'POST',
       header: {
         'Content-Type': 'application/json'
@@ -139,7 +139,7 @@ function generaTabella() {
   const formData = new FormData();
   formData.append('data', document.querySelector("#data").value);
   formData.append('tipo', document.querySelector("#tipo").value);
-  fetch('./select.php', {
+  fetch('./php/select.php', {
     method: 'POST',
     header: {
       'Content-Type': 'application/json'

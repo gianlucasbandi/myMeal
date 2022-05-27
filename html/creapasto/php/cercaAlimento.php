@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../php/config.php');
+require_once('../../../php/config.php');
 session_start();
 if (!isset($_SESSION['user_email']) || !isset($_GET["term"])) {
     header("location: ../../index.php");

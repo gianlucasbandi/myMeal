@@ -1,9 +1,9 @@
 <?php
 
-require_once('../../php/config.php');
+require_once('../../../php/config.php');
 session_start();
 if (!isset($_SESSION['user_email']) || !isset($_POST["data"])) {
-  header("location: ../../index.php");
+  header("location: ../../../index.php");
 }
 
 $email = $_SESSION['user_email'];

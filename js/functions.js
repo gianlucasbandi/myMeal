@@ -1,12 +1,3 @@
-function hideIcon() {
-    var s = document.getElementById("search");
-    s.style.backgroundImage='none';
-}
-
-function result() {
-    window.open("risultati.html")
-}
-
 let swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -43,29 +34,6 @@ let swiper = new Swiper(".mySwiper", {
         }
       },
   });
-
-  function addRows(){ 
-    var table = document.getElementById('pasto');
-    var rowCount = table.rows.length;
-    var cellCount = table.rows[0].cells.length;
-    var row = table.insertRow(rowCount);
-    for(var i=0; i < cellCount; i++){
-      var cell = 'cell'+i;
-      cell = row.insertCell(i);
-      var copycel = document.getElementById('col'+i).innerHTML;
-      cell.innerHTML=copycel;
-    }
-  }
-  function deleteRows(){
-    var table = document.getElementById('pasto');
-    var rowCount = table.rows.length;
-    if(rowCount > '1'){
-      var row = table.deleteRow(rowCount-1);
-      rowCount--;
-    }
-  }
-
-  
   
   //JQUERY
 
@@ -102,7 +70,7 @@ let swiper = new Swiper(".mySwiper", {
       $("#centered3").mouseenter(function(){
         $("#centered3").text("Quanto sono importanti l'allenamento e l'attività fisica nella nostra vita?").css("font-size", "18px");
         $("#centered3").css("background-color", "rgba(255, 255, 255, 0.4)");
-      }, 1000);
+      });
       $("#centered3").mouseleave(function(){
         $("#centered3").text(or3).css("font-size","28px");
         $("#centered3").css("font-style", "normal");
