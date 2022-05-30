@@ -1,0 +1,222 @@
+myMeal
+│
+│   index.php contiene tutte le shortcut alle funzionalità del sito, oltre che nella navbar,
+│   anche all'interno del documento.	
+│		
+│   README.md
+│
+├───css
+│       style.css contiene lo stile di index.php
+│	- la sezione in alto è un carosello che occupa il 100% dello schermo
+│	- shortcut a crea pasto: strutturato con una griglia divisa in due colonne
+│	  fino a che si raggiunge la dimensione espressa nella media query, da quel punto
+│          gli elementi della griglia si dispongono in due righe della stessa dimensione
+│	- shortcut a ricette: flexbox divisa in un box e uno slider; le proprietà dello slider 
+│	  sono definite in js/functions.js
+│	- shortcut a articoli: ...
+│	- shortcut a libri: flexbox con tre immagini cliccabili a cui sono applicati effetti jquery
+│	  descritti in js/functions.js
+│
+├───DB
+│       popolareDB.txt
+│       requisiti.txt
+│       script_tables.txt
+│
+├───HTML
+│   │   articoli.html
+│   │   esperienze.html
+│   │   ricette.html
+│   │
+│   ├───ARTICOLI
+│   │   │   alimenti.html
+│   │   │   allenamento.html
+│   │   │   dieta.html
+│   │   │
+│   │   ├───alimenti
+│   │   │   	pagine statiche di 5 articoli su alimenti
+│   │   │
+│   │   ├───allenamento
+│   │   │       pagine statiche di 5 articoli su allenamento
+│   │   │
+│   │   ├───css
+│   │   │       articoli-categorie.css
+│   │   │       articoli-homepage.css
+│   │   │       articoli-pages.css
+│   │   │
+│   │   ├───dieta
+│   │   │       pagine statiche di 5 articoli su dieta
+│   │   │
+│   │   └───js
+│   │           function.js
+│   │
+│   ├───CREAPASTO
+│   │   │   creapasto.php
+│   │	│	necessita il login per essere accessibile, si viene reindirizzati alla
+│   │	│	homepage in caso contrario. Pagina dinamica che mostra i risultati del db
+│   │	│	quando richiesto e anche al caricamento della pagina, mostrando gli 
+│   │	│	alimenti odierni, all'interno di una tabella generata dinamicamente.
+│   │   │
+│   │   ├───css
+│   │   │       style.css 
+│   │	│	la classe supercontainer (una grid) utilizzata per contenere
+│   │	│	le due classi containerRow (flex). Nella prima vi è un box
+│   │	│	contenente una form con un bottone personalizzato (classe button-13).
+│   │	│	Nella seconda la sezione dedicata alla table che viene generata
+│   │	│	dinamicamente da js.
+│   │   │
+│   │   ├───js
+│   │   │       functions.js
+│   │	│	contiene tutte le funzioni dedicate alla gestione di creapasto.php.
+│   │	│	Ad esempio, all'avvio viene inserita la data del giorno in cui
+│   │	│	si apre la pagina e viene inserita nell'elemento input date,
+│   │	│	per poi generare dinamicamente la tabella inserendo i risultati
+│   │	│	ottenuti dal server php indicato per ogni funzione, il quale
+│   │	│	interagisce con il database; poi per ogni bottone 'eimina' e
+│   │	│	'modifica' e per ogni elemento dedito alla grammatura dell'alimento
+│   │	│	viene	aggiunto un event listener. Viene utilizzato jQuery.
+│   │	│	Per i dettagli si rimanda al codice opportunamente commentato
+│   │	│	in ogni sezione.
+│   │   │
+│   │   └───php
+│   │		file back-end per creapasto.php, in ogni file si controlla sia che l'utente sia loggato
+│   │ 		tramite	la variabile superglobale $_SESSION e sia che sia settata la variabile
+│   │		'data' nella variabile $_POST (o 'term' nella variabile $_GET nel caso cercaAlimento.php),
+│   │		garantendo la propria integrità. Tutti comunicano direttamente con il database.
+│   │
+│   │           cercaAlimento.php
+│   │			gestisce le richieste da parte della searchbox inviate dalla funzione autocomplete
+│   │			tramite una query che utilizza regex
+│   │           delete.php
+│   │			gestisce la rimozione di un alimento dal db. Restituisce dei messaggi di errore.
+│   │           insert.php
+│   │			gestisce l'inserimento di un alimento nel db. Restituisce dei messaggi di errore.
+│   │           select.php
+│   │			gestisce la richiesta di dati presenti nel db. Restituisce dei messaggi di errore.
+│   │           update.php
+│   │			gestisce l'aggiornamento di grammi di un determinato alimento all'interno del db.
+│   │
+│   ├───ESPERIENZE
+│   │   ├───css
+│   │   │       style.css contiene lo stile definito per esperienze.html: 
+│   │   │	Di entrambi gli slider le proprietà di visualizzazione e funzionamento si 
+│   │	│	trovano in esperienze/js/functions.js.
+│   │	│	Del primo slider: ogni card è composta da due lati:
+│   │	│	- "front" rappresentante un'immagine che occupa il 90% della dimensione del padre,
+│   │	│	   e su cui è stata applicato un effetto di rotazione di 180g lungo l'asse Y e settata la 
+│   │	│	   proprietà di backface: hidden per ottenere l'effetto di backflip all'hover del mouse.
+│   │	│	- "back" che invece rappresenta il retro del "front" su cui sono stati applicati
+│   │	│	   gli stessi effetti sopra descritti.	  
+│   │	│	Nella parte centrale:
+│   │	│	E' stata utilizzata una classe "main container" con display:
+│   │	│	flex che contiene le card dei libri.
+│   │	│	Lato responsive curato con la proprietà "flex" (flex-basis) di
+│   │	│	ogni item del main container.
+│   │	│	Del secondo slider:
+│   │	│	è stato realizzato un effetto all'hover del mouse per cui si visualizza il testo,
+│   │	│	che inizialmente ad opacità 0 era invisibile. Sulla stessa classe che contiene
+│   │	│	il testo è stata settata la proprietà "overflow-y: scroll" per permettere la
+│   │	│	sua completa visualizzazione.
+│   │	│	
+│   │   └───js
+│   │           functions.js contiene le funzioni definite per esperienze.html
+│   │		per gli slider: settati i punti di break (breakpoint) a una certa
+│   │		dimensione in px dello schermo e per ognuno il numero di slide
+│   │		visibili (slidePerView), lo spazio tra le slide (spaceBetween)
+│   │		ed infine il numero di quelle che "scalano" dalla visuale.
+│   │		per i suggerimenti visibili a fine di ogni categoria di libri è
+│   │		stata usata un'animazione jquery con il metodo animate che
+│   │		definisce l'opacity a cui arrivano e secondo quale modalità 
+│   │		(linear/swing) degli elementi a cui è applicato il metodo.
+│   │                              
+│   └───RICETTE
+│       │   cena.html
+│       │   colazione.html
+│       │   pranzo.html
+│       │
+│       ├───cena
+│       │       pollo.html
+│       │       zucca.html
+│       │       zucchine.html
+│       │
+│       ├───colazione
+│       │       avocadotoast.html
+│       │       pancake.html
+│       │       porridge.html
+│       │
+│       ├───css
+│       │       style.css definisce lo stile di tutte le pagine.html di questa sezione
+│       │	e di ricette.html in particolare ricette.html, colazione.html, pranzo.html,
+│	│	cena.html hanno lo stesso layout:
+│	│	tutte le card personalizzate sono disposte in una flexbox la cui
+│	│	responsiveness è curata con la proprietà flex (flexbasis) di ogni card.
+│	│	i restanti file.html seguono invece la struttura griglia con template
+│	│	columns fino a 900px, dopodiché il contenuto della griglia si dispone
+│	│	per righe (grazie a una media query). 
+│       │
+│       ├───js
+│       │       functions.js contiene la funzione che definisce il comportamento della search
+│	│	bar in ricette.html descritto nella zona commentata proprio in questo file (functions.js)
+│       │
+│       └───pranzo
+│               insalatona.html
+│               pesto.html
+│               riso.html
+│
+├───IMG
+│      immagini che abbiamo utilizzato
+│   │
+│   └───articoli
+│   	    immagini utilizzate per la sezione articoli
+│
+├───js
+│       functions.js contiene le funzioni javascript e jquery di index.php
+│	in particolare vengono definite le proprietà dello slider (come visto per
+│	esperienze/js/functions.js):
+│	- punti di break (breakpoint) a una certa dimensione in px dello schermo
+│	- il numero di slide visibili (slidePerView), lo spazio tra le slide (spaceBetween)
+│          ed infine il numero di quelle che "scalano" dalla visuale per ogni  breakpoint
+│	e le funzioni jquery che permettono di cambiare il testo delle card in basso, prelevando
+│	quello originale con la funzione in lettura text() e sostituendolo con una nuova stringa
+│	sempre con il metodo text in scrittura all'entrata del mouse. Alla sua "uscita" viene 
+│	ripristinata la stringa originale
+│
+├───LOGIN
+│       functions.js
+│		aggiunge event listener al loginButton, gestisce la visualizzazione dei messaggi di errore
+│		nella zona con id 'messaggi' e controlla che i campi email e password rispettino i
+│		parametri (email sintatticamente valida, email presente, password corretta).
+│		se tutto corretto si viene reindirizzati su index.php
+│       login.html
+│		form per la compilazione dei dati necessari al login. utilizzo di animazioni per la
+│		visualizzazione in sequenza dei vari campi.
+│       style.css
+│		contiene bottone personalizzato e animazioni usate in login.html
+│       validateLogin.php
+│		verifica che la richiesta arrivi dal login button di login.html. Poi verifica che l'utente
+│		sia registrato sul db e crea una sessione settando email e nome.
+│
+├───PHP
+│       config.php
+│	   file di configurazione per interagire con il database, modificando tale file
+│	   vengono modificate le impostazioni di tutti i file php che interagiscono con
+│	   il database.
+│       logout.php
+│	   file utilizzato per distruggere la sessione di myMeal creata, reindirizzando
+│	   l'utente su index.php (la nostra home page)
+│
+└───REGISTRAZIONE
+        functions.js
+		aggiunge event listener al registrationButton, gestisce la visualizzazione dei messaggi
+		di errore nella zona con id 'messaggi' e controlla che i campi nome, cognome, email e
+ 		password rispettino i parametri (email sintatticamente valida, email presente, password
+		corretta, nome non vuoto etc). se tutto corretto si viene reindirizzati su index.php
+        registrazione.html
+		form per la compilazione dei dati necessari alla registrazione.
+		utilizzo di animazioni per la visualizzazione in sequenza dei vari campi.
+        style.css
+		contiene bottone personalizzato e animazioni usate in registrazione.html
+        validateRegistration.php
+		verifica che la richiesta arrivi dal registrationButton di login.html. Poi verifica che
+		l'utente sia già registrato sul db (stessa email). In caso di successo inserisce i
+		dati dell'utente ricevuti (nome, cognome, email, password dopo aver utilizzato un 
+		algoritmo di hashing) e crea una sessione settando email e nome.

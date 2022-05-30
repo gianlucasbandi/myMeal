@@ -56,7 +56,7 @@
 	</div>
 	<div class="d-flex justify-content-center ">
 	  <input class="mt-4 mb-3" id="home"
-			type="submit" onclick="window.location='../..'" value="Home"></input>
+			type="submit" onclick="window.location='../../index.php'" value="Home"></input>
 	</div>
 
   <!-- Footer -->
