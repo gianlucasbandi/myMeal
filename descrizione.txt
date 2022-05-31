@@ -1,3 +1,11 @@
+Il sito si divide in più parti:
+	- la sezione che utilizza chiamate asincrone per interagire con il database 
+	  si trova in "crea pasto";
+	- i form di login e registrazione interagiscono anch'essi con il database;
+	- le restanti sezioni sono pagine che richiedono il reload;
+
+In dettaglio:
+
 myMeal
 │
 │   index.php contiene tutte le shortcut alle funzionalità del sito, oltre che nella navbar,
@@ -10,7 +18,7 @@ myMeal
 │	- la sezione in alto è un carosello che occupa il 100% dello schermo
 │	- shortcut a crea pasto: strutturato con una griglia divisa in due colonne
 │	  fino a che si raggiunge la dimensione espressa nella media query, da quel punto
-│          gli elementi della griglia si dispongono in due righe della stessa dimensione
+│     gli elementi della griglia si dispongono in due righe della stessa dimensione
 │	- shortcut a ricette: flexbox divisa in un box e uno slider; le proprietà dello slider 
 │	  sono definite in js/functions.js
 │	- shortcut a articoli: flexbox con 4 cards con tasto per accedere all' articolo, animato con css
@@ -33,10 +41,18 @@ myMeal
 │   │   │   dieta.html
 │   │   │
 │   │   ├───alimenti
-│   │   │   	pagine statiche di 5 articoli su alimenti
+│   │   │       articolo-acqua.html
+│   │   │       articolo-caffe.html
+│   │   │       articolo-carne.html
+│   │   │       articolo-cioccolato.html
+│   │   │       articolo-frutta.html
 │   │   │
 │   │   ├───allenamento
-│   │   │       pagine statiche di 5 articoli su allenamento
+│   │   │       articolo-cardio.html
+│   │   │       articolo-corsa.html
+│   │   │       articolo-deficit.html
+│   │   │       articolo-funzionale.html
+│   │   │       articolo-massa.html
 │   │   │
 │   │   ├───css
 │   │   │       articoli-homepage.css: contiene lo stile della pagina articoli.html (homepage della sezione).
@@ -72,7 +88,11 @@ myMeal
 │   │   │	dell'articolo. In basso è presente il contenuto dell'articolo diviso in paragrafi.
 │   │   │
 │   │   ├───dieta
-│   │   │       pagine statiche di 5 articoli su dieta
+│   │   │       articolo-digiuno.html
+│   │   │       articolo-lowCarb.html
+│   │   │       articolo-mediterr.html
+│   │   │       articolo-vegan.html
+│   │   │       articolo-vege.html
 │   │   │
 │   │   ├───js
 │   │   │       function-homepage.js: contiene le funzioni dell'homepage degli articoli.
@@ -162,14 +182,14 @@ myMeal
 │   │	│	
 │   │   └───js
 │   │           functions.js contiene le funzioni definite per esperienze.html
-│   │		per gli slider: settati i punti di break (breakpoint) a una certa
-│   │		dimensione in px dello schermo e per ognuno il numero di slide
-│   │		visibili (slidePerView), lo spazio tra le slide (spaceBetween)
-│   │		ed infine il numero di quelle che "scalano" dalla visuale.
-│   │		per i suggerimenti visibili a fine di ogni categoria di libri è
-│   │		stata usata un'animazione jquery con il metodo animate che
-│   │		definisce l'opacity a cui arrivano e secondo quale modalità 
-│   │		(linear/swing) degli elementi a cui è applicato il metodo.
+│   │			per gli slider: settati i punti di break (breakpoint) a una certa
+│   │			dimensione in px dello schermo e per ognuno il numero di slide
+│   │			visibili (slidePerView), lo spazio tra le slide (spaceBetween)
+│   │			ed infine il numero di quelle che "scalano" dalla visuale.
+│   │			per i suggerimenti visibili a fine di ogni categoria di libri è
+│   │			stata usata un'animazione jquery con il metodo animate che
+│   │			definisce l'opacity a cui arrivano e secondo quale modalità 
+│   │			(linear/swing) degli elementi a cui è applicato il metodo.
 │   │                              
 │   └───RICETTE
 │       │   cena.html
@@ -188,17 +208,17 @@ myMeal
 │       │
 │       ├───css
 │       │       style.css definisce lo stile di tutte le pagine.html di questa sezione
-│       │	e di ricette.html in particolare ricette.html, colazione.html, pranzo.html,
-│	│	cena.html hanno lo stesso layout:
-│	│	tutte le card personalizzate sono disposte in una flexbox la cui
-│	│	responsiveness è curata con la proprietà flex (flexbasis) di ogni card.
-│	│	i restanti file.html seguono invece la struttura griglia con template
-│	│	columns fino a 900px, dopodiché il contenuto della griglia si dispone
-│	│	per righe (grazie a una media query). 
+│       │		e di ricette.html in particolare ricette.html, colazione.html, pranzo.html,
+│		│		cena.html hanno lo stesso layout:
+│		│		tutte le card personalizzate sono disposte in una flexbox la cui
+│		│		responsiveness è curata con la proprietà flex (flexbasis) di ogni card.
+│		│		i restanti file.html seguono invece la struttura griglia con template
+│		│		columns fino a 900px, dopodiché il contenuto della griglia si dispone
+│		│		per righe (grazie a una media query). 
 │       │
 │       ├───js
 │       │       functions.js contiene la funzione che definisce il comportamento della search
-│	│	bar in ricette.html descritto nella zona commentata proprio in questo file (functions.js)
+│		│		bar in ricette.html descritto nella zona commentata proprio in questo file (functions.js)
 │       │
 │       └───pranzo
 │               insalatona.html
@@ -213,15 +233,15 @@ myMeal
 │
 ├───js
 │       functions.js contiene le funzioni javascript e jquery di index.php
-│	in particolare vengono definite le proprietà dello slider (come visto per
-│	esperienze/js/functions.js):
-│	- punti di break (breakpoint) a una certa dimensione in px dello schermo
-│	- il numero di slide visibili (slidePerView), lo spazio tra le slide (spaceBetween)
+│		in particolare vengono definite le proprietà dello slider (come visto per
+│		esperienze/js/functions.js):
+│		- punti di break (breakpoint) a una certa dimensione in px dello schermo
+│		- il numero di slide visibili (slidePerView), lo spazio tra le slide (spaceBetween)
 │          ed infine il numero di quelle che "scalano" dalla visuale per ogni  breakpoint
-│	e le funzioni jquery che permettono di cambiare il testo delle card in basso, prelevando
-│	quello originale con la funzione in lettura text() e sostituendolo con una nuova stringa
-│	sempre con il metodo text in scrittura all'entrata del mouse. Alla sua "uscita" viene 
-│	ripristinata la stringa originale
+│		e le funzioni jquery che permettono di cambiare il testo delle card in basso, prelevando
+│		quello originale con la funzione in lettura text() e sostituendolo con una nuova stringa
+│		sempre con il metodo text in scrittura all'entrata del mouse. Alla sua "uscita" viene 
+│		ripristinata la stringa originale
 │
 ├───LOGIN
 │       functions.js
