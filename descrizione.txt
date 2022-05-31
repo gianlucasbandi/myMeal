@@ -13,7 +13,7 @@ myMeal
 │          gli elementi della griglia si dispongono in due righe della stessa dimensione
 │	- shortcut a ricette: flexbox divisa in un box e uno slider; le proprietà dello slider 
 │	  sono definite in js/functions.js
-│	- shortcut a articoli: ...
+│	- shortcut a articoli: flexbox con 4 cards con tasto per accedere all' articolo, animato con css
 │	- shortcut a libri: flexbox con tre immagini cliccabili a cui sono applicati effetti jquery
 │	  descritti in js/functions.js
 │
@@ -39,16 +39,59 @@ myMeal
 │   │   │       pagine statiche di 5 articoli su allenamento
 │   │   │
 │   │   ├───css
-│   │   │       articoli-categorie.css
-│   │   │       articoli-homepage.css
-│   │   │       articoli-pages.css
+│   │   │       articoli-homepage.css: contiene lo stile della pagina articoli.html (homepage della sezione).
+│   │	│	Nella sezione categorie sono presenti 3 card all interno di una flexbox, ognuna delle quali
+│   │   │	rimanda
+│   │	│	ad una sotto categoria di articoli. L'effetto di zoom al passaggio del mouse è realizzato con
+│   │   │	jquery
+│   │	│	(function-homepage.js)
+│   │	│	Nella sezione articoli sono presenti 6 cards all'interno di uno slider, (function-homepage.js)
+│   │	│	le cards sono composte da una zona in alto con immagine e una zona in basso con titolo
+│   │   │	dell'articolo
+│   │	│	e tag riguardante la categoria dell'articolo il cui colore è impostato con JQuery. 
+│   │	│	Al passaggio del mouse è applicato un transform: translateY. 
+│   │	│	Nella zona in basso della pagina sono presenti 5 cards in una flexbox,
+│   │	│	nelle prime due al passaggio del mouse viene applicato uno zoom sull immagine in background 
+│   │   │	della card, nelle ultime tre al passaggio del mouse compare un breve commento sull'articolo
+│   │   │	articoli-categorie.css: contiene lo stile delle pagine alimenti.html, allenamento.html,
+│   │   │	dieta.html.
+│   │   │	Nella sezione in evidenza sono presenti 5 card inserite in una flexbox, quella a sinistra
+│   │   │	di dimensione 400px e le 4 a destra a loro volte in una flexbox di 200px. Le card si
+│   │   │	riposizionano
+│   │   │	in automatico in base alla dimensione della pagina e su ognuna è applicato transform: scale
+│   │   │	all'hover del mouse.
+│   │   │	Nella sezione articoli sono presenti 3 card con immagine in alto, titolo e tasto per accedere
+│   │   │	all'articolo in basso. Il tasto inizialmente vuoto è animato con un' animazione di riempimento 
+│   │   │	al passaggio del mouse.
+│   │   │	Nella sezione altre categorie sono presenti 2 card simili a quelle della homepage che rimandano
+│   │   │	alle altre 2 sezioni, entrambe animate con jquery
+│   │   │	articoli-pages.css: contiene lo stile degli articoli
+│   │   │	Nella parte in alto della pagina è presente un container diviso a meta, da una parte
+│   │   │	l'indice dell articolo con collegamenti interni che rimandano ai vari paragrafi dell'articolo,
+│   │   │	dall'altra è presente una funzione js che calcola in il tempo di lettura in base alla lunghezza
+│   │   │	dell'articolo. In basso è presente il contenuto dell'articolo diviso in paragrafi.
 │   │   │
 │   │   ├───dieta
 │   │   │       pagine statiche di 5 articoli su dieta
 │   │   │
-│   │   └───js
-│   │           function.js
-│   │
+│   │   ├───js
+│   │   │       function-homepage.js: contiene le funzioni dell'homepage degli articoli.
+│   │   │	La prima funzione gestisce le funzionalità di navigazione dello swiper e alcune proprietà 
+│   │   │	grafiche,
+│   │   │	in particolare imposta alcuni breakpoints per gestire il numero di slide visibili in base alla
+│   │   │	dimensione in pixel dello schermo
+│   │   │	La seconda funzione gestisce l'animazione di zoom presente sulle card aumentando la dimensione
+│   │   │	con transform scale e la dimensione del font
+│   │   │	Inoltre viene impostato il colore dei tag delle card dello swiper
+│   │   │
+│   │   │	function-categorie.js: contiene la funzione di zoom della sezione altre categorie 
+│   │   │
+│   │   │	function-pages.js: contiene la funzione che calcola il tempo di lettura degli articoli.
+│   │   │	Tramite getElementById e innertext ricava dal body dell'articolo, dal quale vengono rimossi
+│   │   │	gli spazi con la funzione trim e suddivisa in parole con la funzione split. La funzione
+│   │   │	lenght conta il numero di parole che viene successivamente suddiviso per 250 (media parole 
+│   │   │	lette al minuto).
+│   │   │
 │   ├───CREAPASTO
 │   │   │   creapasto.php
 │   │	│	necessita il login per essere accessibile, si viene reindirizzati alla
