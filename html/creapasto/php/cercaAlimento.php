@@ -3,7 +3,7 @@
 require_once('../../../php/config.php');
 session_start();
 if (!isset($_SESSION['user_email']) || !isset($_GET["term"])) {
-    header("location: ../../index.php");
+    header("location: ../../../index.php");
 }
     $search = strtoupper($_GET['term']);
     $query = "SELECT * FROM alimento WHERE nome LIKE '{$search}%' LIMIT 15";
